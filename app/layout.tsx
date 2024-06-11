@@ -3,6 +3,7 @@ import { Noto_Sans_KR } from "next/font/google";
 import { twMerge } from "tailwind-merge";
 import "./globals.css";
 import { config } from "@fortawesome/fontawesome-svg-core";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 config.autoAddCss = false;
 
@@ -27,7 +28,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={twMerge(NotoKR.className)}>{children}</body>
+      <body className={twMerge(NotoKR.className)}>
+        <SpeedInsights />
+        {children}
+      </body>
     </html>
   );
 }
