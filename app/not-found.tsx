@@ -1,5 +1,6 @@
 "use client";
 
+import { GetStaticPaths, GetStaticProps } from "next";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -27,6 +28,29 @@ const NotFound = () => {
       </Link>
     </div>
   );
+};
+
+export const getStaticProps: GetStaticProps = async (context) => {
+  const { locale } = context.params as any;
+
+  if (!locale) {
+    return {
+      notFound: true,
+    };
+  }
+
+  return {
+    props: {
+      locale,
+    },
+  };
+};
+
+export const getStaticPaths: GetStaticPaths = async () => {
+  return {
+    paths: [{ params: { locale: "ko" } }, { params: { locale: "en" } }],
+    fallback: true,
+  };
 };
 
 export default NotFound;
