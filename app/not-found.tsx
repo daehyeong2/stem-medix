@@ -2,13 +2,13 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 const NotFound = () => {
   const pathname = usePathname();
-  let locale = "ko";
+  const [locale, setLocale] = useState("ko");
   useEffect(() => {
-    locale = pathname.split("/")[1];
+    setLocale(pathname.split("/")[1]);
   }, []);
   return (
     <div className="flex flex-col h-screen justify-center items-center gap-5">
