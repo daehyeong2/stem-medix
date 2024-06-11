@@ -1,12 +1,15 @@
 "use client";
 
-import { GetStaticPaths, GetStaticProps } from "next";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useEffect } from "react";
 
 const NotFound = () => {
   const pathname = usePathname();
-  const locale = pathname.split("/")[1];
+  let locale = "ko";
+  useEffect(() => {
+    locale = pathname.split("/")[1];
+  }, []);
   return (
     <div className="flex flex-col h-screen justify-center items-center gap-5">
       <h1 className="text-[5rem] font-bold text-neutral-700">404</h1>
@@ -28,29 +31,6 @@ const NotFound = () => {
       </Link>
     </div>
   );
-};
-
-export const getStaticProps: GetStaticProps = async (context) => {
-  const { locale } = context.params as any;
-
-  if (!locale) {
-    return {
-      notFound: true,
-    };
-  }
-
-  return {
-    props: {
-      locale,
-    },
-  };
-};
-
-export const getStaticPaths: GetStaticPaths = async () => {
-  return {
-    paths: [{ params: { locale: "ko" } }, { params: { locale: "en" } }],
-    fallback: true,
-  };
 };
 
 export default NotFound;
