@@ -1,4 +1,4 @@
-import HomeSwiper from "@/components/home-swiper";
+import HomeFullpage from "@/components/home-fullpage";
 import { getI18n } from "@/locales/server";
 import { setStaticParamsLocale } from "next-international/server";
 
@@ -15,10 +15,9 @@ export default async function Home({
   params: { locale: "ko" | "en" };
 }) {
   setStaticParamsLocale(params.locale);
-  const t = await getI18n();
   return (
-    <div className="h-[200vh]">
-      <HomeSwiper />
+    <div>
+      <HomeFullpage />
     </div>
   );
 }

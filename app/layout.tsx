@@ -1,15 +1,15 @@
 import type { Metadata } from "next";
 import { Noto_Sans_KR } from "next/font/google";
-import { twMerge } from "tailwind-merge";
 import "./globals.css";
 import { config } from "@fortawesome/fontawesome-svg-core";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import "@fortawesome/fontawesome-svg-core/styles.css";
+import { cn } from "@/components/utils/cn";
 config.autoAddCss = false;
 
 const NotoKR = Noto_Sans_KR({
   subsets: ["latin"],
-  weight: ["100", "200", "400", "500", "600"],
+  weight: ["100", "200", "400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
@@ -28,7 +28,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={twMerge(NotoKR.className)}>
+      <body className={cn(NotoKR.className)}>
         <SpeedInsights />
         {children}
       </body>

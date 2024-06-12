@@ -31,4 +31,20 @@ export default {
       },
     },
   },
+  routes: {
+    home: {
+      sliders: {
+        main: {
+          title: "About Stem Medix",
+          description:
+            "Stem Medix is ​​a global company conducting advanced biotechnology research and development.",
+        },
+        main_field: {
+          title: "R&D Technology",
+          description:
+            "Stem Medix's main areas include developing stem cell treatments and providing platform technology.",
+        },
+      },
+    },
+  },
 } as const;

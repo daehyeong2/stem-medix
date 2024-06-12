@@ -31,4 +31,20 @@ export default {
       },
     },
   },
+  routes: {
+    home: {
+      sliders: {
+        main: {
+          title: "Stem Medix 소개",
+          description:
+            "Stem Medix는 첨단 생명공학 연구 및 개발을 수행하는 글로벌 기업입니다.",
+        },
+        main_field: {
+          title: "Stem Medix의 주요 분야",
+          description:
+            "Stem Medix의 주요 분야로는 줄기세포 치료제 개발, 플랫폼 기술 제공 등이 있습니다.​",
+        },
+      },
+    },
+  },
 } as const;

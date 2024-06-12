@@ -3,6 +3,7 @@
 import { useEffect, type ReactNode } from "react";
 import { I18nProviderClient } from "@/locales/client";
 import { RecoilRoot } from "recoil";
+import Loading from "@/app/loading";
 
 type ProviderProps = {
   locale: string;
@@ -18,7 +19,9 @@ export function Provider({ locale, children }: ProviderProps) {
   }, [locale]);
   return (
     <RecoilRoot>
-      <I18nProviderClient locale={locale}>{children}</I18nProviderClient>
+      <I18nProviderClient locale={locale} fallback={<Loading />}>
+        {children}
+      </I18nProviderClient>
     </RecoilRoot>
   );
 }

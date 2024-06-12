@@ -4,10 +4,12 @@ import Image from "next/image";
 import Link from "next/link";
 import LocaleToggle from "./locale-toggle";
 import { useEffect, useState } from "react";
-import { twMerge } from "tailwind-merge";
 import { useI18n } from "@/locales/client";
 import { useRecoilValue } from "recoil";
 import { isLocaleToggleHoverAtom } from "./atoms";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
+import { cn } from "./utils/cn";
 
 const Nav = () => {
   const t = useI18n();
@@ -28,12 +30,19 @@ const Nav = () => {
   }, []);
   return (
     <header
-      className={twMerge(
-        "flex justify-between fixed top-0 py-5 px-10 md:px-32 w-full items-center z-20 border border-transparent transition-colors group/nav peer/nav",
-        scrollY > 80 && "border-b-neutral-200 hover:border-transparent"
+      className={cn(
+        "flex justify-between lg:justify-start fixed top-0 py-2 px-5 md:px-10 lg:py-5 xl:px-32 w-full items-center z-20 border border-transparent border-none lg:border-solid transition-colors group/nav peer/nav bg-[#209ce4] lg:bg-transparent h-16 lg:h-fit hover:border-transparent",
+        scrollY > 80 && "border-b-neutral-700",
+        scrollY > 80 && isLocaleToggleHover && "!border-b-neutral-700"
       )}
     >
-      <Link className="relative w-20 md:w-40 h-10 md:h-16 z-20" href="/">
+      <button className="text-white text-2xl lg:hidden">
+        <FontAwesomeIcon icon={faBars} />
+      </button>
+      <Link
+        className="absolute left-0 right-0 mx-auto lg:relative lg:mx-0 w-24 lg:w-40 h-10 lg:h-16 z-20"
+        href="/"
+      >
         <Image
           className="object-cover object-center"
           fill
@@ -43,7 +52,7 @@ const Nav = () => {
           priority
         />
       </Link>
-      <nav className="flex items-center gap-16 h-fit *:z-20 *:flex *:justify-center *:min-w-28">
+      <nav className="ml-auto hidden lg:flex items-center gap-10 xl:gap-16 h-fit *:z-20 *:flex *:justify-center *:min-w-28">
         <div className="group/nav-item">
           <Link
             className="hover:text-accent text-lg transition-colors duration-150 text-center z-20 font-[500] group-hover/nav-item:text-accent"
@@ -52,9 +61,9 @@ const Nav = () => {
             {t("nav.titles.company")}
           </Link>
           <ul
-            className={twMerge(
+            className={cn(
               "absolute top-full flex flex-col items-center *:transition-colors *:text-[15px] opacity-0 pointer-events-none group-hover/nav:opacity-100 group-hover/nav:pointer-events-auto group-hover/nav:delay-100 transition-opacity delay-0 duration-300 ease-in-out *:h-9",
-              isLocaleToggleHover && "!opacity-0 !pointer-events-none"
+              isLocaleToggleHover && "!opacity-0 !pointer-events-none !delay-0"
             )}
           >
             <Link className="hover:text-accent" href="/about">
@@ -74,14 +83,14 @@ const Nav = () => {
         <div className="group/nav-item">
           <Link
             className="hover:text-accent text-lg transition-colors duration-150 text-center z-20 font-[500] group-hover/nav-item:text-accent"
-            href="/tech"
+            href="/pipeline"
           >
             {t("nav.titles.technology")}
           </Link>
           <ul
-            className={twMerge(
+            className={cn(
               "absolute top-full flex flex-col items-center *:transition-colors *:text-[15px] opacity-0 pointer-events-none group-hover/nav:opacity-100 group-hover/nav:pointer-events-auto group-hover/nav:delay-100 transition-opacity delay-0 duration-300 ease-in-out *:h-9",
-              isLocaleToggleHover && "!opacity-0 !pointer-events-none"
+              isLocaleToggleHover && "!opacity-0 !pointer-events-none !delay-0"
             )}
           >
             <Link className="hover:text-accent" href="/pipeline">
@@ -95,14 +104,14 @@ const Nav = () => {
         <div className="group/nav-item">
           <Link
             className="hover:text-accent text-lg transition-colors duration-150 text-center z-20 font-[500] group-hover/nav-item:text-accent"
-            href="/tech"
+            href="/culture-medium"
           >
             {t("nav.titles.product")}
           </Link>
           <ul
-            className={twMerge(
+            className={cn(
               "absolute top-full flex flex-col items-center *:transition-colors *:text-[15px] opacity-0 pointer-events-none group-hover/nav:opacity-100 group-hover/nav:pointer-events-auto group-hover/nav:delay-100 transition-opacity delay-0 duration-300 ease-in-out *:h-9",
-              isLocaleToggleHover && "!opacity-0 !pointer-events-none"
+              isLocaleToggleHover && "!opacity-0 !pointer-events-none !delay-0"
             )}
           >
             <Link className="hover:text-accent" href="/culture-medium">
@@ -116,14 +125,14 @@ const Nav = () => {
         <div className="group/nav-item">
           <Link
             className="hover:text-accent text-lg transition-colors duration-150 text-center z-20 font-[500] group-hover/nav-item:text-accent"
-            href="/tech"
+            href="/news"
           >
             {t("nav.titles.ir_pr")}
           </Link>
           <ul
-            className={twMerge(
+            className={cn(
               "absolute top-full flex flex-col items-center *:transition-colors *:text-[15px] opacity-0 pointer-events-none group-hover/nav:opacity-100 group-hover/nav:pointer-events-auto group-hover/nav:delay-100 transition-opacity delay-0 duration-300 ease-in-out *:h-9",
-              isLocaleToggleHover && "!opacity-0 !pointer-events-none"
+              isLocaleToggleHover && "!opacity-0 !pointer-events-none !delay-0"
             )}
           >
             <Link className="hover:text-accent" href="/news">
@@ -137,21 +146,21 @@ const Nav = () => {
             </Link>
           </ul>
         </div>
-        <LocaleToggle />
         <div
-          className={twMerge(
+          className={cn(
             "absolute left-0 top-0 pt-full border-b-neutral-200 border pointer-events-none opacity-0 max-h-[90px] overflow-hidden group-hover/nav:opacity-100 group-hover/nav:max-h-[270px] group-hover/nav:pointer-events-auto w-screen !transition-all !z-10 !duration-[400ms] bg-white ease-in-out h-[270px]",
             isLocaleToggleHover &&
               "!opacity-0 !max-h-[90px] !pointer-events-none"
           )}
         />
         <div
-          className={twMerge(
+          className={cn(
             "fixed left-0 top-0 w-screen h-screen pointer-events-none bg-[rgba(0,0,0,0.6)] opacity-0 group-hover/nav:opacity-100 transition-opacity !z-0",
             isLocaleToggleHover && "!opacity-0"
           )}
         />
       </nav>
+      <LocaleToggle />
     </header>
   );
 };
