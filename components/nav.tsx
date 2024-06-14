@@ -14,7 +14,16 @@ import { cn } from "./utils/cn";
 const Nav = () => {
   const t = useI18n();
   const [scrollY, setScrollY] = useState(0);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const isLocaleToggleHover = useRecoilValue(isLocaleToggleHoverAtom);
+
+  const openMenu = () => {
+    setIsMenuOpen(true);
+  };
+
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+  };
 
   const handleScroll = () => {
     setScrollY(window.scrollY);
@@ -32,13 +41,30 @@ const Nav = () => {
     <header
       className={cn(
         "flex justify-between lg:justify-start fixed top-0 py-2 px-5 md:px-10 lg:py-5 xl:px-32 w-full items-center z-20 border border-transparent border-none lg:border-solid transition-colors group/nav peer/nav bg-[#209ce4] lg:bg-transparent h-16 lg:h-fit hover:border-transparent",
-        scrollY > 80 && "border-b-neutral-700",
+        scrollY > 80 && "border-b-neutral-700 backdrop-blur-sm",
         scrollY > 80 && isLocaleToggleHover && "!border-b-neutral-700"
       )}
     >
-      <button className="text-white text-2xl lg:hidden">
+      <button onClick={openMenu} className="text-white text-2xl lg:hidden">
         <FontAwesomeIcon icon={faBars} />
       </button>
+      <div
+        className={cn(
+          "absolute left-0 top-0 flex-col gap-3 flex pointer-events-none bg-white w-0 h-screen py-3 px-5 z-40 transition-all opacity-0 duration-[350ms]",
+          isMenuOpen && "pointer-events-auto w-[240px] opacity-100"
+        )}
+      >
+        <button onClick={closeMenu} className="ml-auto text-2xl lg:hidden">
+          <FontAwesomeIcon icon={faBars} />
+        </button>
+      </div>
+      <div
+        onClick={closeMenu}
+        className={cn(
+          "fixed left-0 top-0 w-screen h-screen pointer-events-none bg-[rgba(0,0,0,0.6)] opacity-0 transition-opacity z-30 duration-[350ms]",
+          isMenuOpen && "opacity-100 pointer-events-auto"
+        )}
+      />
       <Link
         className="absolute left-0 right-0 mx-auto lg:relative lg:mx-0 w-24 lg:w-40 h-10 lg:h-16 z-20"
         href="/"
@@ -52,7 +78,12 @@ const Nav = () => {
           priority
         />
       </Link>
-      <nav className="ml-auto hidden lg:flex items-center gap-10 xl:gap-16 h-fit *:z-20 *:flex *:justify-center *:min-w-28">
+      <nav
+        className={cn(
+          "ml-auto hidden lg:flex items-center gap-10 xl:gap-16 h-fit *:z-20 *:flex *:justify-center *:min-w-28 text-white group-hover/nav:text-black",
+          isLocaleToggleHover && "!text-white"
+        )}
+      >
         <div className="group/nav-item">
           <Link
             className="hover:text-accent text-lg transition-colors duration-150 text-center z-20 font-[500] group-hover/nav-item:text-accent"

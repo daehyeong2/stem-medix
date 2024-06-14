@@ -29,12 +29,12 @@ const CustomNavigation = ({
         sections.length - 1 < pageIndex && "opacity-0 pointer-events-none"
       )}
     >
-      <div className="absolute top-0 left-[10px] h-full w-[1px] bg-neutral-700" />
+      <div className="absolute top-0 left-[10px] h-full w-[1px] bg-neutral-700/80" />
       <ul className="flex flex-col gap-6">
         {sections.map((section, index) => (
           <li
             className={cn(
-              `relative cursor-pointer rounded-full size-5 border border-neutral-700 border-solid flex justify-center items-center group transition-margin duration-300`,
+              `relative cursor-pointer rounded-full size-5 border border-neutral-700/80 border-solid flex justify-center items-center group transition-margin duration-300`,
               pageIndex === index &&
                 (pageIndex === 0
                   ? "mb-7"
@@ -47,10 +47,10 @@ const CustomNavigation = ({
               fullpageApi.moveTo(section);
             }}
           >
-            <div className="size-2 rounded-full bg-neutral-700" />
+            <div className="size-2 rounded-full bg-neutral-700/80" />
             <span
               className={cn(
-                "absolute left-7 -top-1 text-neutral-700 opacity-0 w-0 pointer-events-none group-hover:w-fit group-hover:opacity-100 transition-opacity duration-100",
+                "absolute left-7 -top-1 text-neutral-700/80 opacity-0 w-0 pointer-events-none group-hover:w-fit group-hover:opacity-100 transition-opacity duration-100",
                 pageIndex === index && "w-fit opacity-100 pointer-events-auto"
               )}
             >
@@ -81,6 +81,7 @@ const HomeFullpage = () => {
       scrollingSpeed={700}
       scrollOverflow={false}
       scrollBar
+      responsiveWidth={1024}
       render={({ fullpageApi }) => {
         return (
           <>
@@ -100,7 +101,7 @@ const HomeFullpage = () => {
               />
               <Image
                 className={cn(
-                  "fixed right-7 bottom-7 bg-white rounded-xl cursor-pointer opacity-100 pointer-events-auto transition-opacity border border-solid border-neutral-300 z-10",
+                  "fixed right-7 bottom-7 bg-white rounded-xl cursor-pointer opacity-100 pointer-events-auto transition-opacity border border-solid border-neutral-300 z-10 animate-pulse duration-[80ms] hidden lg:block",
                   pageIndex > sections.length - 1 &&
                     "opacity-0 pointer-events-none"
                 )}

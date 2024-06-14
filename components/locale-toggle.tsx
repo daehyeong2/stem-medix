@@ -26,9 +26,9 @@ const LocaleToggle = () => {
     <div
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
-      className="ml-10 xl:ml-16 rounded-sm border-neutral-400 group/localeToggle h-fit relative flex flex-col items-center w-24 z-20"
+      className="lg:ml-10 xl:ml-16 rounded-sm border-neutral-400 group/localeToggle h-fit relative flex flex-col items-center w-[80px] lg:w-24 z-20"
     >
-      <span className="flex justify-between items-center w-full group-hover/localeToggle:bg-accent cursor-pointer transition-colors group-hover/localeToggle:text-white px-3 py-1.5 text-center text-[16px] font-medium text-white lg:text-black">
+      <span className="flex justify-between items-center w-full group-hover/localeToggle:bg-accent cursor-pointer transition-colors group-hover/localeToggle:text-white px-3 py-1.5 text-center text-[16px] font-medium text-white lg:text-white lg:group-hover/nav:text-black lg:group-hover/localeToggle:!text-white">
         {currentLocale === "ko" ? "KOR" : "ENG"}
         <FontAwesomeIcon
           className="text-xs relative -bottom-[2px] group-hover/localeToggle:rotate-180 transition-transform duration-150"
