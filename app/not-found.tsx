@@ -11,7 +11,7 @@ const NotFound = () => {
     setLocale(pathname.split("/")[1]);
   }, []);
   return (
-    <div className="flex flex-col h-screen justify-center items-center gap-5">
+    <div className="flex flex-col h-screen justify-center items-center gap-5 text-center px-3">
       <h1 className="text-[4.5rem] md:text-[5rem] font-bold text-neutral-700">
         404
       </h1>
@@ -27,7 +27,7 @@ const NotFound = () => {
       </h3>
       <Link
         href="/"
-        className="py-2 px-3 md:py-2.5 md:px-3.5 text-sm md:text-base bg-sky-500 hover:bg-[#129bdb] transition-colors duration-100 rounded-lg text-white mt-2"
+        className="py-2 px-3 md:py-2.5 md:px-3.5 text-sm md:text-base bg-[#129bdb] hover:bg-sky-500 transition-colors duration-100 rounded-lg text-white mt-2"
       >
         {locale === "ko" ? "홈으로 돌아가기" : "Return to home"}
       </Link>

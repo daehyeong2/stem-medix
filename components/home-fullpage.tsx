@@ -7,6 +7,7 @@ import Image from "next/image";
 import HomeSwiper from "./home-swiper";
 import { cn } from "./utils/cn";
 import Link from "next/link";
+import { useCurrentLocale, useI18n } from "@/locales/client";
 
 interface Credits {
   enabled?: boolean;
@@ -81,6 +82,8 @@ const CustomNavigation = ({
 const HomeFullpage = () => {
   const sections = ["main", "company", "technology"];
   const [pageIndex, setPageIndex] = useRecoilState(pageIndexAtom);
+  const t = useI18n();
+  const currentLocale = useCurrentLocale();
   const credits: Credits = {
     enabled: true,
     position: "right",
@@ -124,65 +127,103 @@ const HomeFullpage = () => {
                   <span className="font-bold lg:text-xl text-center">
                     C O M P A N Y
                   </span>
-                  <h1 className="text-xl leading-[1.5] lg:text-[1.65rem] text-center font-extralight max-w-[690px]">
-                    <span className="font-semibold text-sky-200">
-                      Stem Medix
-                    </span>
-                    는 <span className="font-medium">줄기세포 치료제 개발</span>
-                    ,{" "}
-                    <span className="font-medium">
-                      줄기세포 맞춤형 ​배양배지 산업
-                    </span>
-                    , <span className="font-medium">플랫폼 기술 제공</span>을
-                    기반으로 하는 회사입니다.​
+                  <h1
+                    className={cn(
+                      "text-xl leading-[1.5] lg:text-[1.65rem] text-center font-extralight max-w-[690px]",
+                      currentLocale === "en" &&
+                        "text-[1.15rem] lg:text-[1.25rem]"
+                    )}
+                  >
+                    {currentLocale === "ko" ? (
+                      <>
+                        <span className="font-semibold text-sky-200">
+                          Stem Medix
+                        </span>
+                        는{" "}
+                        <span className="font-medium">
+                          줄기세포 치료제 개발
+                        </span>
+                        ,{" "}
+                        <span className="font-medium">
+                          줄기세포 맞춤형 ​배양배지 산업
+                        </span>
+                        , <span className="font-medium">플랫폼 기술 제공</span>
+                        을 기반으로 하는 회사입니다.​
+                      </>
+                    ) : (
+                      <>
+                        <span className="font-semibold text-sky-200">
+                          Stem Medix
+                        </span>{" "}
+                        is ​​a company based on{" "}
+                        <span className="font-medium">
+                          the development of stem cell treatments
+                        </span>
+                        ,{" "}
+                        <span className="font-medium">
+                          the customized stem cell culture medium industry
+                        </span>
+                        , and{" "}
+                        <span className="font-medium">
+                          the provision of platform technology
+                        </span>
+                        .​
+                      </>
+                    )}
                   </h1>
                 </div>
-                <ul className="grid lg:grid-cols-2 gap-5 *:max-w-96 *:flex *:flex-col *:gap-3 *:p-5 *:rounded-lg *:border-neutral-700 *:border *:backdrop-blur-sm max-h-[420px] overflow-auto lg:max-h-none *:bg-gradient-to-r *:from-transparent *:via-[#5b9bfc7c] *:to-transparent *:transition-all *:bg-pos-0 *:bg-size-200 *:duration-300">
+                <ul className="grid lg:grid-cols-2 gap-5 *:max-w-96 *:flex *:flex-col *:gap-3 *:p-5 *:rounded-lg *:border-neutral-700 *:border *:backdrop-blur-sm max-h-[450px] pb-3 overflow-auto lg:max-h-none *:bg-gradient-to-r *:from-transparent *:via-[#5b9bfc7c] *:to-transparent *:transition-all *:bg-pos-0 *:bg-size-200 *:duration-300 *:w-72 px-3 bg-gradient-to-b from-transparent to-[#5b9bfc33] to-[99%] rounded-md lg:bg-none no-scrollbar">
                   <li className="hover:bg-pos-60">
-                    <h2 className="text-xl text-white">
-                      성장 목표 (사업화 추진 전략)
-                    </h2>
+                    <h2 className="text-xl text-white">{t("cards.goals")}</h2>
                     <Link
                       href="/goals"
                       className="text-sm lg:text-base p-2 rounded-md bg-[#0984e3] w-fit"
                     >
-                      바로가기
+                      {t("shortcut")}
                     </Link>
                   </li>
                   <li className="hover:bg-pos-60">
-                    <h2 className="text-xl text-white">연구 성과</h2>
+                    <h2 className="text-xl text-white">
+                      {t("cards.research_achievement")}
+                    </h2>
                     <Link
                       href="/research-achievement"
                       className="text-sm lg:text-base p-2 rounded-md bg-[#0984e3] w-fit"
                     >
-                      바로가기
+                      {t("shortcut")}
                     </Link>
                   </li>
                   <li className="hover:bg-pos-60">
-                    <h2 className="text-xl text-white">파이프라인</h2>
+                    <h2 className="text-xl text-white">
+                      {t("cards.pipeline")}
+                    </h2>
                     <Link
                       href="/pipeline"
                       className="text-sm lg:text-base p-2 rounded-md bg-[#0984e3] w-fit"
                     >
-                      바로가기
+                      {t("shortcut")}
                     </Link>
                   </li>
                   <li className="hover:bg-pos-60">
-                    <h2 className="text-xl text-white">유효성 평가 서비스</h2>
+                    <h2 className="text-xl text-white">
+                      {t("cards.validation_service")}
+                    </h2>
                     <Link
                       href="/validation-service"
                       className="text-sm lg:text-base p-2 rounded-md bg-[#0984e3] w-fit"
                     >
-                      바로가기
+                      {t("shortcut")}
                     </Link>
                   </li>
                   <li className="hover:bg-pos-60">
-                    <h2 className="text-xl text-white">배양배지</h2>
+                    <h2 className="text-xl text-white">
+                      {t("cards.culture_medium")}
+                    </h2>
                     <Link
                       href="/culture-medium"
                       className="text-sm lg:text-base p-2 rounded-md bg-[#0984e3] w-fit"
                     >
-                      바로가기
+                      {t("shortcut")}
                     </Link>
                   </li>
                 </ul>

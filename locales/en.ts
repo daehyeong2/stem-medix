@@ -47,8 +47,16 @@ export default {
       },
     },
   },
+  shortcut: "Go to the page",
   shortcuts: {
     company_introduction: "Go to company introduction",
     main_area: "Go to main areas",
+  },
+  cards: {
+    goals: "Growth goals",
+    research_achievement: "Research achievement",
+    pipeline: "Pipeline",
+    validation_service: "Validation service",
+    culture_medium: "Culture medium",
   },
 } as const;

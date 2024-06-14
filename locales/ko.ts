@@ -47,8 +47,16 @@ export default {
       },
     },
   },
+  shortcut: "바로가기",
   shortcuts: {
     company_introduction: "회사 소개 바로가기",
     main_area: "주요 분야 바로가기",
+  },
+  cards: {
+    goals: "성장 목표",
+    research_achievement: "연구 성과",
+    pipeline: "파이프라인",
+    validation_service: "유효성 평가 서비스",
+    culture_medium: "배양배지",
   },
 } as const;
