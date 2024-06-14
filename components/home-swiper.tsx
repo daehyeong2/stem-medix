@@ -37,7 +37,7 @@ const HomeSwiper = () => {
           clickable: true,
         }}
       >
-        <SwiperSlide className="!flex items-center gap-3 px-5 lg:px-[88px] pt-10 lg:pt-0">
+        <SwiperSlide className="!flex items-center gap-3 px-5 lg:px-[88px] pt-10 pb-4 lg:py-0">
           <Image
             className="object-cover object-[35%] -z-10 blur-[2px] brightness-75"
             src="/resources/image/home-background1.png"
@@ -46,7 +46,7 @@ const HomeSwiper = () => {
             fill
             placeholder="blur"
           />
-          <div className="flex flex-col gap-3 p-5 text-white">
+          <div className="flex flex-col gap-3 p-3 lg:p-16 text-white">
             <h1 className="text-4xl leading-[1.5] lg:text-[3.2rem] font-bold w-fit pointer-events-none">
               {t("routes.home.sliders.main.title")}
             </h1>
@@ -54,14 +54,14 @@ const HomeSwiper = () => {
               {t("routes.home.sliders.main.description")}
             </p>
             <Link
-              className="mt-3 px-2.5 py-3 bg-[#0984e3] hover:bg-[#0984e3] rounded-lg font-semibold w-fit transition-colors"
+              className="mt-3 px-2.5 py-3 bg-[#0984e3] hover:bg-[#0087ee] rounded-lg font-semibold w-fit transition-colors"
               href="/about"
             >
-              회사 소개 바로가기
+              {t("shortcuts.company_introduction")}
             </Link>
           </div>
         </SwiperSlide>
-        <SwiperSlide className="!flex items-center gap-3 px-5 lg:px-[88px] pt-10 lg:pt-0">
+        <SwiperSlide className="!flex items-center gap-3 px-5 lg:px-[88px] pt-10 pb-4 lg:py-0">
           <Image
             className="object-cover object-[35%] -z-10 blur-[2px] brightness-75"
             src="/resources/image/home-background2.png"
@@ -70,7 +70,7 @@ const HomeSwiper = () => {
             fill
             placeholder="blur"
           />
-          <div className="flex flex-col gap-3 p-5 text-white">
+          <div className="flex flex-col gap-3 p-3 lg:p-16 text-white">
             <h1 className="text-4xl leading-[1.5] lg:text-[3.2rem] font-bold w-fit pointer-events-none">
               {t("routes.home.sliders.main_field.title")}
             </h1>
@@ -78,10 +78,10 @@ const HomeSwiper = () => {
               {t("routes.home.sliders.main_field.description")}
             </p>
             <Link
-              className="mt-3 px-2.5 py-3 bg-[#0984e3] hover:bg-[#0984e3] rounded-lg font-semibold w-fit transition-colors"
+              className="mt-3 px-2.5 py-3 bg-[#0984e3] hover:bg-[#0087ee] rounded-lg font-semibold w-fit transition-colors"
               href="/about"
             >
-              주요 분야 바로가기
+              {t("shortcuts.main_area")}
             </Link>
           </div>
         </SwiperSlide>

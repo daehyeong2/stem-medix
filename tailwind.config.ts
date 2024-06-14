@@ -20,6 +20,13 @@ const config: Config = {
           dark: "rgb(2 132 199)",
         },
       },
+      backgroundSize: {
+        "size-200": "200% 200%",
+      },
+      backgroundPosition: {
+        "pos-0": "0% 0%",
+        "pos-60": "60% 60%",
+      },
     },
   },
   plugins: [],

@@ -47,4 +47,8 @@ export default {
       },
     },
   },
+  shortcuts: {
+    company_introduction: "Go to company introduction",
+    main_area: "Go to main areas",
+  },
 } as const;

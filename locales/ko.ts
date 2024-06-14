@@ -47,4 +47,8 @@ export default {
       },
     },
   },
+  shortcuts: {
+    company_introduction: "회사 소개 바로가기",
+    main_area: "주요 분야 바로가기",
+  },
 } as const;

@@ -6,7 +6,7 @@ import LocaleToggle from "./locale-toggle";
 import { useEffect, useState } from "react";
 import { useI18n } from "@/locales/client";
 import { useRecoilValue } from "recoil";
-import { isLocaleToggleHoverAtom } from "./atoms";
+import { isLocaleToggleHoverAtom, pageIndexAtom } from "./atoms";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { cn } from "./utils/cn";
@@ -15,7 +15,9 @@ const Nav = () => {
   const t = useI18n();
   const [scrollY, setScrollY] = useState(0);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const pageIndex = useRecoilValue(pageIndexAtom);
   const isLocaleToggleHover = useRecoilValue(isLocaleToggleHoverAtom);
+  const whiteSections = [0, 1];
 
   const openMenu = () => {
     setIsMenuOpen(true);
@@ -37,6 +39,7 @@ const Nav = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+  const isWhiteSection = whiteSections.includes(pageIndex);
   return (
     <header
       className={cn(
@@ -80,8 +83,9 @@ const Nav = () => {
       </Link>
       <nav
         className={cn(
-          "ml-auto hidden lg:flex items-center gap-10 xl:gap-16 h-fit *:z-20 *:flex *:justify-center *:min-w-28 text-white group-hover/nav:text-black",
-          isLocaleToggleHover && "!text-white"
+          "ml-auto hidden lg:flex items-center gap-10 xl:gap-16 h-fit *:z-20 *:flex *:justify-center *:min-w-28 group-hover/nav:text-black",
+          isWhiteSection && "text-white",
+          isWhiteSection && isLocaleToggleHover && "!text-white"
         )}
       >
         <div className="group/nav-item">
@@ -94,6 +98,7 @@ const Nav = () => {
           <ul
             className={cn(
               "absolute top-full flex flex-col items-center *:transition-colors *:text-[15px] opacity-0 pointer-events-none group-hover/nav:opacity-100 group-hover/nav:pointer-events-auto group-hover/nav:delay-100 transition-opacity delay-0 duration-300 ease-in-out *:h-9",
+
               isLocaleToggleHover && "!opacity-0 !pointer-events-none !delay-0"
             )}
           >
@@ -121,6 +126,7 @@ const Nav = () => {
           <ul
             className={cn(
               "absolute top-full flex flex-col items-center *:transition-colors *:text-[15px] opacity-0 pointer-events-none group-hover/nav:opacity-100 group-hover/nav:pointer-events-auto group-hover/nav:delay-100 transition-opacity delay-0 duration-300 ease-in-out *:h-9",
+
               isLocaleToggleHover && "!opacity-0 !pointer-events-none !delay-0"
             )}
           >
@@ -142,6 +148,7 @@ const Nav = () => {
           <ul
             className={cn(
               "absolute top-full flex flex-col items-center *:transition-colors *:text-[15px] opacity-0 pointer-events-none group-hover/nav:opacity-100 group-hover/nav:pointer-events-auto group-hover/nav:delay-100 transition-opacity delay-0 duration-300 ease-in-out *:h-9",
+
               isLocaleToggleHover && "!opacity-0 !pointer-events-none !delay-0"
             )}
           >
@@ -163,6 +170,7 @@ const Nav = () => {
           <ul
             className={cn(
               "absolute top-full flex flex-col items-center *:transition-colors *:text-[15px] opacity-0 pointer-events-none group-hover/nav:opacity-100 group-hover/nav:pointer-events-auto group-hover/nav:delay-100 transition-opacity delay-0 duration-300 ease-in-out *:h-9",
+
               isLocaleToggleHover && "!opacity-0 !pointer-events-none !delay-0"
             )}
           >
@@ -180,6 +188,7 @@ const Nav = () => {
         <div
           className={cn(
             "absolute left-0 top-0 pt-full border-b-neutral-200 border pointer-events-none opacity-0 max-h-[90px] overflow-hidden group-hover/nav:opacity-100 group-hover/nav:max-h-[270px] group-hover/nav:pointer-events-auto w-screen !transition-all !z-10 !duration-[400ms] bg-white ease-in-out h-[270px]",
+
             isLocaleToggleHover &&
               "!opacity-0 !max-h-[90px] !pointer-events-none"
           )}
@@ -191,7 +200,7 @@ const Nav = () => {
           )}
         />
       </nav>
-      <LocaleToggle />
+      <LocaleToggle whiteSections={whiteSections} />
     </header>
   );
 };
