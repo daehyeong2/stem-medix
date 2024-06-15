@@ -27,6 +27,9 @@ const config: Config = {
         "pos-0": "0% 0%",
         "pos-60": "60% 60%",
       },
+      screens: {
+        tall: { raw: "(min-height: 700px)" },
+      },
     },
   },
   plugins: [],

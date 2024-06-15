@@ -17,7 +17,7 @@ const HomeSwiper = () => {
   const t = useI18n();
   return (
     <div
-      className="section !min-h-[420px] !h-[420px] lg:!min-h-screen lg:!h-screen"
+      className="section !min-h-[420px] !h-[420px] lg:!min-h-[700px] lg:!h-screen"
       data-anchor="main"
     >
       <Swiper

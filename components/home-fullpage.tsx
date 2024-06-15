@@ -29,7 +29,7 @@ const CustomNavigation = ({
   return (
     <div
       className={cn(
-        "opacity-100 hidden lg:flex items-center fixed left-4 top-0 bottom-0 my-auto z-20 transition-opacity pointer-events-auto",
+        "opacity-100 hidden lg:tall:flex items-center fixed left-4 top-0 bottom-0 my-auto z-20 transition-opacity pointer-events-auto",
         sections.length - 1 < pageIndex && "opacity-0 pointer-events-none"
       )}
     >
@@ -102,6 +102,7 @@ const HomeFullpage = () => {
       scrollOverflow={false}
       scrollBar
       responsiveWidth={1024}
+      responsiveHeight={700}
       render={({ fullpageApi }) => {
         return (
           <>
@@ -114,7 +115,7 @@ const HomeFullpage = () => {
             <ReactFullpage.Wrapper>
               <HomeSwiper />
               <div
-                className="section !flex flex-col gap-14 py-16 box-border justify-center items-center !min-h-80 h-fit lg:h-screen relative text-white"
+                className="section !flex flex-col gap-14 py-16 box-border justify-center items-center !min-h-20 lg:!min-h-[600px] h-fit lg:h-screen relative text-white"
                 data-anchor="company"
               >
                 <Image
@@ -235,7 +236,7 @@ const HomeFullpage = () => {
               />
               <Image
                 className={cn(
-                  "fixed right-7 bottom-7 bg-white rounded-xl cursor-pointer opacity-100 pointer-events-auto transition-opacity border border-solid border-neutral-300 z-10 animate-pulse duration-[80ms] hidden lg:block",
+                  "fixed right-7 bottom-7 bg-white rounded-xl cursor-pointer opacity-100 pointer-events-auto transition-opacity border border-solid border-neutral-300 z-10 animate-pulse duration-[80ms] hidden lg:tall:block",
                   pageIndex > sections.length - 1 &&
                     "opacity-0 pointer-events-none"
                 )}
