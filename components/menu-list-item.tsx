@@ -42,7 +42,7 @@ const MenuListItem = ({ title, list, open = false }: IPropsMenuListItem) => {
     <li className="flex flex-col">
       {" "}
       <h2
-        className="text-lg flex justify-between items-center px-5 py-3 cursor-pinter border-b-neutral-200 border-solid border-b"
+        className="text-lg flex justify-between items-center px-5 py-3 cursor-pointer border-b-neutral-200 border-solid border-b"
         onClick={isOpen ? closeList : openList}
       >
         {title}

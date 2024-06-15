@@ -9,7 +9,7 @@ const NotFound = () => {
   const [locale, setLocale] = useState("ko");
   useEffect(() => {
     setLocale(pathname.split("/")[1]);
-  }, []);
+  }, [pathname]);
   return (
     <div className="flex flex-col h-screen justify-center items-center gap-5 text-center px-3">
       <h1 className="text-[4.5rem] md:text-[5rem] font-bold text-neutral-700">

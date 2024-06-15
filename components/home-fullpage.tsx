@@ -262,7 +262,7 @@ const HomeFullpage = () => {
                     <br />
                     자랑하는 <span className="font-semibold">Stem Medix</span>
                   </h2>
-                  <div className="flex flex-wrap justify-center lg:justify-start gap-7 lg:gap-[2.1rem] mt-8 lg:mt-10 *:flex *:flex-col *:size-64 *:lg:w-48 *:lg:max-h-64 *:lgxl:size-56 *:xl:!size-64 *:rounded-3xl *:bg-[#eff3f7] *:px-7 *:pt-3 *:pb-7 *:relative overflow-auto lg:overflow-visible max-h-[600px] py-7 px-5 lg:p-0 lg:max-h-none">
+                  <div className="flex flex-wrap justify-center lg:justify-start gap-7 lg:gap-[2.1rem] mt-8 lg:mt-10 *:flex *:flex-col *:size-64 *:lg:w-48 *:lg:max-h-64 *:lg-xl:size-56 *:xl:!size-64 *:rounded-3xl *:bg-[#eff3f7] *:px-7 *:pt-3 *:pb-7 *:relative overflow-auto lg:overflow-visible max-h-[600px] py-7 px-5 lg:p-0 lg:max-h-none">
                     <div className="group/techItem">
                       <div className="bg-gradient-to-r from-blue-500 to-indigo-500 group-hover/techItem:blur-md absolute top-0 left-0 size-full -z-10 rounded-3xl transition-[filter] duration-200" />
                       <span className="absolute left-4 top-1.5 text-[0.65rem] lg:text-[0.6rem] xl:text-[0.65rem]">

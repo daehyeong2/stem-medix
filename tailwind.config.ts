@@ -16,7 +16,7 @@ const config: Config = {
       colors: {
         accent: {
           light: "rgb(56 189 248)",
-          DEFAULT: "rgb(14 165 233);",
+          DEFAULT: "rgb(14 165 233)",
           dark: "rgb(2 132 199)",
         },
       },
@@ -29,7 +29,7 @@ const config: Config = {
       },
       screens: {
         tall: { raw: "(min-height: 700px)" },
-        lgxl: { raw: "(min-width: 1150px)" },
+        "lg-xl": { raw: "(min-width: 1150px)" },
       },
     },
   },
