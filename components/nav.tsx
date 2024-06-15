@@ -206,7 +206,14 @@ const Nav = () => {
         </div>
         <div className="group/nav-item">
           <Link
-            className="hover:text-accent text-lg transition-colors duration-150 text-center z-20 font-[500] group-hover/nav-item:text-accent"
+            className={cn(
+              "hover:text-accent text-lg transition-colors duration-150 text-center z-20 font-[500] group-hover/nav-item:text-accent",
+              [2, 3].includes(pageIndex) &&
+                "2xl:text-white 2xl:group-hover/nav:text-black",
+              [2, 3].includes(pageIndex) &&
+                isLocaleToggleHover &&
+                "2xl:!text-white"
+            )}
             href="/culture-medium"
           >
             {t("nav.titles.product")}
@@ -227,7 +234,12 @@ const Nav = () => {
         </div>
         <div className="group/nav-item">
           <Link
-            className="hover:text-accent text-lg transition-colors duration-150 text-center z-20 font-[500] group-hover/nav-item:text-accent"
+            className={cn(
+              "hover:text-accent text-lg transition-colors duration-150 text-center z-20 font-[500] group-hover/nav-item:!text-accent",
+              [2, 3].includes(pageIndex) &&
+                "text-white group-hover/nav:text-black",
+              [2, 3].includes(pageIndex) && isLocaleToggleHover && "!text-white"
+            )}
             href="/news"
           >
             {t("nav.titles.ir_pr")}

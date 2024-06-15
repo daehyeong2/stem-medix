@@ -8,6 +8,7 @@ import HomeSwiper from "./home-swiper";
 import { cn } from "./utils/cn";
 import Link from "next/link";
 import { useCurrentLocale, useI18n } from "@/locales/client";
+import { motion } from "framer-motion";
 
 interface Credits {
   enabled?: boolean;
@@ -54,7 +55,7 @@ const CustomNavigation = ({
             )}
             key={index}
             onClick={() => {
-              fullpageApi.moveTo(section);
+              fullpageApi.moveTo(index === 2 ? "technology" : section);
             }}
           >
             <div
@@ -65,9 +66,11 @@ const CustomNavigation = ({
             />
             <span
               className={cn(
-                "absolute left-7 -top-1 text-neutral-700/80 opacity-0 w-0 pointer-events-none group-hover:w-max group-hover:opacity-100 transition-opacity duration-100",
-                pageIndex === index && "w-max opacity-100 pointer-events-auto",
-                isWhiteSection && "text-white"
+                "absolute left-7 -top-1 opacity-0 w-max pointer-events-none group-hover:opacity-100 transition-all duration-200 max-w-24 text-white/[85%]",
+                pageIndex === index &&
+                  "text-neutral-800 group-hover:text-white/80 opacity-100 pointer-events-auto",
+                pageIndex === 2 && "group-hover:text-neutral-700/80",
+                isWhiteSection && "text-white group-hover:!text-white/[85%]"
               )}
             >
               {section.charAt(0).toUpperCase() + section.slice(1)}
@@ -79,8 +82,20 @@ const CustomNavigation = ({
   );
 };
 
+const technologyBackgroundVariants = {
+  initial: {
+    transform: "rotate(0deg) translateX(-50px)",
+  },
+  animate: {
+    transform: "rotate(6deg) translateX(0)",
+    transition: {
+      delay: 0.4,
+    },
+  },
+};
+
 const HomeFullpage = () => {
-  const sections = ["main", "company", "technology"];
+  const sections = ["main", "company", "technology & Product"];
   const [pageIndex, setPageIndex] = useRecoilState(pageIndexAtom);
   const t = useI18n();
   const currentLocale = useCurrentLocale();
@@ -210,7 +225,7 @@ const HomeFullpage = () => {
                       {t("cards.validation_service")}
                     </h2>
                     <Link
-                      href="/validation-service"
+                      href="/validation-servi ce"
                       className="text-sm lg:text-base p-2 rounded-md bg-[#0984e3] w-fit"
                     >
                       {t("shortcut")}
@@ -229,7 +244,145 @@ const HomeFullpage = () => {
                   </li>
                 </ul>
               </div>
-              <div className="section !h-40" data-anchor="technology" />
+              <div
+                className="section !grid lg:grid-cols-5 py-10 px-5 md:px-12 lg:p-0 !h-fit !min-h-fit lg:!h-screen"
+                data-anchor="technology"
+              >
+                <div
+                  className={cn(
+                    "col-span-3 lg:pl-44 lg:pt-32 lg:opacity-0 transition-opacity duration-500 delay-500",
+                    [2, 3].includes(pageIndex) && "!opacity-100"
+                  )}
+                >
+                  <h1 className="text-base lg:text-[1.1rem] font-medium text-neutral-400 tracking-[0.25rem] mt-7">
+                    T E C H N O L O G Y
+                  </h1>
+                  <h2 className="text-3xl lg:text-4xl font-light mt-3">
+                    보다 전문적인 기술을
+                    <br />
+                    자랑하는 <span className="font-semibold">Stem Medix</span>
+                  </h2>
+                  <div className="flex flex-wrap justify-center lg:justify-start gap-7 lg:gap-[2.1rem] mt-8 lg:mt-10 *:flex *:flex-col *:size-64 *:lg:w-48 *:lg:max-h-64 *:lgxl:size-56 *:xl:!size-64 *:rounded-3xl *:bg-[#eff3f7] *:px-7 *:pt-3 *:pb-7 *:relative overflow-auto lg:overflow-visible max-h-[600px] py-7 px-5 lg:p-0 lg:max-h-none">
+                    <div className="group/techItem">
+                      <div className="bg-gradient-to-r from-blue-500 to-indigo-500 group-hover/techItem:blur-md absolute top-0 left-0 size-full -z-10 rounded-3xl transition-[filter] duration-200" />
+                      <span className="absolute left-4 top-1.5 text-[0.65rem] lg:text-[0.6rem] xl:text-[0.65rem]">
+                        Image - Designed by{" "}
+                        <a
+                          target="_blank"
+                          className="text-blue-500"
+                          href="https://freepik.com"
+                          rel="noopener noreferrer"
+                        >
+                          Freepik
+                        </a>
+                      </span>
+                      <Image
+                        className="lg:size-24 xl:size-[120px] relative -left-3 z-0 brightness-95"
+                        src="/resources/image/plan.png"
+                        height={120}
+                        width={120}
+                        alt="plan-image"
+                      />
+                      <h1 className="font-medium text-[1.33rem] lg:text-[1.1rem] xl:[1.33rem]">
+                        파이프라인
+                      </h1>
+                      <p className="text-neutral-600 text-[15px] mt-1 z-10 lg:text-[12px] xl:text-[15px]">
+                        기반 핵심 파이프라인
+                      </p>
+                      <Link
+                        className="mt-auto relative -left-1 -bottom-2 w-fit px-2.5 py-1.5 lg:px-2 lg:py-1 lg:text-sm xl:px-2.5 xl:py-1.5 xl:text-base  bg-[#0984e3] text-white rounded-lg"
+                        href="/pipeline"
+                      >
+                        바로가기
+                      </Link>
+                    </div>
+                    <div className="group/techItem">
+                      <div className="bg-gradient-to-r from-indigo-400 to-blue-400 group-hover/techItem:blur-md absolute top-0 left-0 size-full -z-10 rounded-3xl transition-[filter]" />
+                      <span className="absolute left-4 top-1.5 text-[0.65rem] lg:text-[0.6rem] xl:text-[0.65rem]">
+                        Image - Designed by{" "}
+                        <a
+                          target="_blank"
+                          className="text-blue-500"
+                          href="https://freepik.com"
+                          rel="noopener noreferrer"
+                        >
+                          Freepik
+                        </a>
+                      </span>
+                      <Image
+                        className="lg:size-24 xl:size-[120px] relative -left-3 z-0 brightness-95"
+                        src="/resources/image/cell.png"
+                        height={120}
+                        width={120}
+                        alt="cell-image"
+                      />
+                      <h1 className="font-medium text-[1.33rem] lg:text-[1.1rem] xl:[1.33rem]">
+                        SM-101(SR-1)
+                      </h1>
+                      <p className="text-neutral-600 text-[15px] mt-1 lg:text-[12px] xl:text-[15px]">
+                        Stem Medix의 주요 기술
+                      </p>
+                      <Link
+                        className="mt-auto relative -left-1 -bottom-2 w-fit px-2.5 py-1.5 lg:px-2 lg:py-1 lg:text-sm xl:px-2.5 xl:py-1.5 xl:text-base  bg-[#0984e3] text-white rounded-lg"
+                        href="/sm-101"
+                      >
+                        바로가기
+                      </Link>
+                    </div>
+                    <div className="group/techItem">
+                      <div className="bg-gradient-to-r from-indigo-400 to-blue-400 group-hover/techItem:blur-md absolute top-0 left-0 size-full -z-10 rounded-3xl transition-[filter]" />
+                      <span className="absolute left-4 top-1.5 text-[0.65rem] lg:text-[0.6rem] xl:text-[0.65rem]">
+                        Image - Designed by{" "}
+                        <a
+                          target="_blank"
+                          className="text-blue-500"
+                          href="https://freepik.com"
+                          rel="noopener noreferrer"
+                        >
+                          Freepik
+                        </a>
+                      </span>
+                      <Image
+                        className="lg:size-24 xl:size-[120px] relative -left-3 z-0 brightness-95"
+                        src="/resources/image/validation.png"
+                        height={120}
+                        width={120}
+                        alt="validation-image"
+                      />
+                      <h1 className="font-medium text-[1.33rem] lg:text-[1.1rem] xl:[1.33rem]">
+                        유효성 평가 서비스
+                      </h1>
+                      <p className="text-neutral-600 text-[15px] mt-1 lg:text-[12px] xl:text-[15px]">
+                        신속하고 전문적인 평가 서비스
+                      </p>
+                      <Link
+                        className="mt-auto relative -left-1 -bottom-2 w-fit px-2.5 py-1.5 lg:px-2 lg:py-1 lg:text-sm xl:px-2.5 xl:py-1.5 xl:text-base  bg-[#0984e3] text-white rounded-lg"
+                        href="/sm-101"
+                      >
+                        바로가기
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+                <div className="hidden lg:block bg-black relative h-full overflow-hidden col-span-2">
+                  <motion.div
+                    className="absolute -top-32 -left-32 rotate-6 bg-white w-40 h-[200vh] z-10"
+                    variants={technologyBackgroundVariants}
+                    initial="initial"
+                    animate={[2, 3].includes(pageIndex) ? "animate" : "initial"}
+                    transition={{ delay: 0.7 }}
+                  />
+                  <Image
+                    className={cn(
+                      "object-cover object-[15%] transition-[filter] duration-500 delay-300",
+                      [2, 3].includes(pageIndex) && "brightness-[60%]"
+                    )}
+                    src="/resources/image/home-background3.png"
+                    alt="technology-background"
+                    fill
+                  />
+                </div>
+              </div>
               <footer
                 className="section !h-40 !min-h-40 bg-neutral-400"
                 data-anchor="footer"
@@ -238,7 +391,7 @@ const HomeFullpage = () => {
                 className={cn(
                   "fixed right-7 bottom-7 bg-white rounded-xl cursor-pointer opacity-100 pointer-events-auto transition-opacity border border-solid border-neutral-300 z-10 animate-pulse duration-[80ms] hidden lg:tall:block",
                   pageIndex > sections.length - 1 &&
-                    "opacity-0 pointer-events-none"
+                    "!opacity-0 !pointer-events-none"
                 )}
                 width={60}
                 height={60}

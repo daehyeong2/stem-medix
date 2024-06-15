@@ -29,6 +29,7 @@ const config: Config = {
       },
       screens: {
         tall: { raw: "(min-height: 700px)" },
+        lgxl: { raw: "(min-width: 1150px)" },
       },
     },
   },

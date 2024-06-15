@@ -33,7 +33,9 @@ const LocaleToggle = ({ whiteSections }: { whiteSections: number[] }) => {
       <span
         className={cn(
           "flex justify-between items-center w-full group-hover/localeToggle:bg-accent cursor-pointer transition-colors px-3 py-1.5 text-center text-[16px] font-medium lg:group-hover/nav:text-black lg:group-hover/localeToggle:!text-white group-hover/localeToggle:text-white text-white",
-          whiteSections.includes(pageIndex) ? "text-white" : "lg:text-black"
+          whiteSections.includes(pageIndex) || [2, 3].includes(pageIndex)
+            ? "text-white"
+            : "lg:text-black"
         )}
       >
         {currentLocale === "ko" ? "KOR" : "ENG"}
