@@ -119,7 +119,7 @@ const HomeFullpage = () => {
                 data-anchor="company"
               >
                 <Image
-                  className="-z-10 blur-sm brightness-75 object-cover object-center"
+                  className="-z-10 blur-sm brightness-75 object-cover"
                   src="/resources/image/building.png"
                   fill
                   alt="building"
@@ -229,7 +229,7 @@ const HomeFullpage = () => {
                   </li>
                 </ul>
               </div>
-              <div className="section" data-anchor="technology" />
+              <div className="section !h-40" data-anchor="technology" />
               <footer
                 className="section !h-40 !min-h-40 bg-neutral-400"
                 data-anchor="footer"
