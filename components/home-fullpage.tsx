@@ -114,7 +114,7 @@ const HomeFullpage = () => {
             <ReactFullpage.Wrapper>
               <HomeSwiper />
               <div
-                className="section flex flex-col gap-14 py-16 box-border justify-center items-center !min-h-80 h-fit lg:h-screen relative text-white"
+                className="section !flex flex-col gap-14 py-16 box-border justify-center items-center !min-h-80 h-fit lg:h-screen relative text-white"
                 data-anchor="company"
               >
                 <Image
@@ -172,7 +172,7 @@ const HomeFullpage = () => {
                     )}
                   </h1>
                 </div>
-                <ul className="grid lg:grid-cols-2 gap-5 *:max-w-96 *:flex *:flex-col *:gap-3 *:p-5 *:rounded-lg *:border-neutral-700 *:border *:backdrop-blur-sm max-h-[450px] pb-3 overflow-auto lg:max-h-none *:bg-gradient-to-r *:from-transparent *:via-[#5b9bfc7c] *:to-transparent *:transition-all *:bg-pos-0 *:bg-size-200 *:duration-300 *:w-72 px-3 bg-gradient-to-b from-transparent to-[#5b9bfc33] to-[99%] rounded-md lg:bg-none no-scrollbar">
+                <ul className="grid w-fit lg:grid-cols-2 gap-5 *:max-w-96 *:flex *:flex-col *:gap-3 *:p-5 *:rounded-lg *:border-neutral-700 *:border *:backdrop-blur-sm max-h-[450px] pb-3 overflow-auto lg:max-h-fit *:bg-gradient-to-r *:from-transparent *:via-[#5b9bfc7c] *:to-transparent *:transition-all *:bg-pos-0 *:bg-size-200 *:duration-300 *:w-72 px-3 bg-gradient-to-b from-transparent to-[#5b9bfc33] to-[99%] rounded-md lg:bg-none">
                   <li className="hover:bg-pos-60">
                     <h2 className="text-xl text-white">{t("cards.goals")}</h2>
                     <Link
