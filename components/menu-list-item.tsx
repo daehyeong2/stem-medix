@@ -56,7 +56,7 @@ const MenuListItem = ({ title, list, open = false }: IPropsMenuListItem) => {
       </h2>
       <motion.ul
         className={cn(
-          "flex pointer-events-none flex-col gap-3 box-border px-5 bg-neutral-100 opacity-0 transition-opacity duration-150",
+          "flex pointer-events-none flex-col gap-3 box-border px-5 bg-neutral-100 opacity-0 transition-opacity duration-100 overflow-hidden",
           isOpen && "opacity-100 pointer-events-auto"
         )}
         variants={listVariants}
