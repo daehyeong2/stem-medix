@@ -100,7 +100,8 @@ const HomeFullpage = () => {
   const t = useI18n();
   const currentLocale = useCurrentLocale();
   const credits: Credits = {
-    enabled: true,
+    enabled: false,
+    label: "Made with fullPage.js",
     position: "right",
   };
   const onLeave = (origin: Item, destination: Item) => {
@@ -262,7 +263,7 @@ const HomeFullpage = () => {
                     <br />
                     자랑하는 <span className="font-semibold">Stem Medix</span>
                   </h2>
-                  <div className="flex flex-wrap justify-center lg:justify-start gap-7 lg:gap-[2.1rem] mt-8 lg:mt-10 *:flex *:flex-col *:size-64 *:lg:w-48 *:lg:max-h-64 *:lg-xl:size-56 *:xl:!size-64 *:rounded-3xl *:bg-[#eff3f7] *:px-7 *:pt-3 *:pb-7 *:relative overflow-auto lg:overflow-visible max-h-[600px] py-7 px-5 lg:p-0 lg:max-h-none">
+                  <div className="flex flex-wrap justify-center lg:justify-start gap-7 lg:gap-[2.1rem] mt-8 lg:mt-12 *:flex *:flex-col *:size-64 *:lg:w-48 *:lg:max-h-64 *:lg-xl:size-56 *:xl:!size-64 *:rounded-3xl *:bg-[#eff3f7] *:px-7 *:pt-3 *:pb-7 *:relative">
                     <div className="group/techItem">
                       <div className="bg-gradient-to-r from-blue-500 to-indigo-500 group-hover/techItem:blur-md absolute top-0 left-0 size-full -z-10 rounded-3xl transition-[filter] duration-200" />
                       <span className="absolute left-4 top-1.5 text-[0.65rem] lg:text-[0.6rem] xl:text-[0.65rem]">
@@ -384,9 +385,51 @@ const HomeFullpage = () => {
                 </div>
               </div>
               <footer
-                className="section !h-40 !min-h-40 bg-neutral-400"
+                className="section !h-fit !min-h-fit bg-neutral-50 pt-5 py-7 lg:py-5"
                 data-anchor="footer"
-              />
+              >
+                <div className="flex flex-col w-full mx-auto gap-3 px-5 md:px-12 lg:px-0 lg:max-w-[700px]">
+                  <div>
+                    <Link
+                      className="font-semibold text-neutral-700 hover:text-neutral-900 transition-colors"
+                      href="/privacy-policy"
+                    >
+                      개인정보처리방침
+                    </Link>
+                  </div>
+                  <hr />
+                  <div className="flex gap-10">
+                    <Image
+                      className="my-auto size-24"
+                      src="/logo.png"
+                      alt="footer-logo"
+                      width={100}
+                      height={100}
+                    />
+                    <ul className="flex flex-wrap gap-x-7 gap-y-2 *:font-bold *:text-neutral-500 *:text-sm h-fit">
+                      <li>
+                        상호명{" "}
+                        <span className="font-normal text-nuetral-300">
+                          Stem Medix
+                        </span>
+                      </li>
+                      <li>
+                        이메일{" "}
+                        <span className="font-normal text-nuetral-300">
+                          0000@0000.com
+                        </span>
+                      </li>
+                      <li>
+                        주소{" "}
+                        <span className="font-normal text-nuetral-300">
+                          경상남도 양산시 물금읍 범어리 부산대학로49 ,
+                          (부산대학교 양산캠퍼스 --) ---호
+                        </span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </footer>
               <Image
                 className={cn(
                   "fixed right-7 bottom-7 bg-white rounded-xl cursor-pointer opacity-100 pointer-events-auto transition-opacity border border-solid border-neutral-300 z-10 animate-pulse duration-[80ms] hidden lg:tall:block",
