@@ -14,8 +14,8 @@ const LocaleLayout = async ({
   setStaticParamsLocale(locale);
   return (
     <Provider locale={locale}>
-      {children}
       <Nav />
+      {children}
     </Provider>
   );
 };

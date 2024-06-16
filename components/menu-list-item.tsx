@@ -3,7 +3,7 @@
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
-import { useState } from "react";
+import { Dispatch, SetStateAction, useState } from "react";
 import { cn } from "./utils/cn";
 import { motion } from "framer-motion";
 
@@ -14,9 +14,15 @@ interface IPropsMenuListItem {
     href: string;
   }[];
   open?: boolean;
+  setIsMenuOpen: Dispatch<SetStateAction<boolean>>;
 }
 
-const MenuListItem = ({ title, list, open = false }: IPropsMenuListItem) => {
+const MenuListItem = ({
+  title,
+  list,
+  open = false,
+  setIsMenuOpen,
+}: IPropsMenuListItem) => {
   const [isOpen, setIsOpen] = useState(open);
 
   const openList = () => {
@@ -37,6 +43,9 @@ const MenuListItem = ({ title, list, open = false }: IPropsMenuListItem) => {
       paddingTop: "20px",
       paddingBottom: "20px",
     },
+  };
+  const onMove = () => {
+    setIsMenuOpen(false);
   };
   return (
     <li className="flex flex-col">
@@ -64,7 +73,12 @@ const MenuListItem = ({ title, list, open = false }: IPropsMenuListItem) => {
         animate={isOpen ? "animate" : "initial"}
       >
         {list.map((item, idx) => (
-          <Link className="text-[15px] w-fit" href={item.href} key={idx}>
+          <Link
+            onClick={onMove}
+            className="text-[15px] w-fit"
+            href={item.href}
+            key={idx}
+          >
             -{item.title}
           </Link>
         ))}

@@ -59,4 +59,40 @@ export default {
     validation_service: "유효성 평가 서비스",
     culture_medium: "배양배지",
   },
+  technology: {
+    title: {
+      first: "보다 전문적인 기술을",
+      second: "자랑하는",
+      point: "Stem Medix",
+    },
+    items: {
+      pipeline: {
+        title: "파이프라인",
+        description: "기반 핵심 파이프라인",
+      },
+      sm_101: {
+        title: "SM-101(SR-1)",
+        description: "Stem Medix의 주요 기술",
+      },
+      validation_service: {
+        title: "유효성 평가 서비스",
+        description: "신속하고 전문적인 평가 서비스",
+      },
+    },
+  },
+  footer: {
+    privacy_policy: "개인정보처리방침",
+    titles: {
+      company: "상호명",
+      email: "이메일",
+      address: "주소",
+    },
+    contents: {
+      company: "Stem Medix",
+      email: "0000@0000.com",
+      address:
+        "경상남도 양산시 물금읍 범어리 부산대학로49, (부산대학교 양산캠퍼스 --) ---호",
+    },
+  },
+  notFound: "페이지를 찾을 수 없음",
 } as const;

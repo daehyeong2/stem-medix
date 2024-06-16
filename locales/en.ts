@@ -59,4 +59,39 @@ export default {
     validation_service: "Validation service",
     culture_medium: "Culture medium",
   },
+  technology: {
+    title: {
+      first: "More professional skills",
+      second: "Proud",
+      point: "Stem Medix",
+    },
+    items: {
+      pipeline: {
+        title: "Pipeline",
+        description: "Based core pipeline",
+      },
+      sm_101: {
+        title: "SM-101(SR-1)",
+        description: "Stem Medix’s key technology",
+      },
+      validation_service: {
+        title: "Validation service",
+        description: "Fast and professional evaluation service",
+      },
+    },
+  },
+  footer: {
+    privacy_policy: "Privacy Policy",
+    titles: {
+      company: "Company",
+      email: "Email",
+      address: "address",
+    },
+    contents: {
+      company: "Stem Medix",
+      email: "0000@0000.com",
+      address: "영어 버전 주소",
+    },
+  },
+  notFound: "Page not found",
 } as const;

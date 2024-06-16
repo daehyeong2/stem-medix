@@ -191,13 +191,13 @@ const HomeFullpage = () => {
                     )}
                   </h1>
                 </div>
-                <ul className="grid w-fit lg:grid-cols-2 gap-5 *:max-w-96 *:flex *:gap-5 *:items-center *:justify-between *:p-5 *:rounded-lg *:border-neutral-700 *:border *:backdrop-blur-sm max-h-[450px] pb-3 overflow-auto lg:max-h-fit *:bg-gradient-to-r *:from-transparent *:via-[#5b9bfc7c] *:to-transparent *:transition-all *:bg-pos-0 *:bg-size-200 *:duration-300 *:w-72 px-3 bg-gradient-to-b from-transparent to-[#5b9bfc33] to-[99%] rounded-md lg:bg-none">
+                <ul className="grid w-fit lg:grid-cols-2 gap-5 *:max-w-96 *:flex *:gap-5 *:items-center *:justify-between *:p-5 *:rounded-lg *:border-neutral-700 *:border *:backdrop-blur-sm max-h-[450px] pb-3 overflow-auto lg:max-h-fit *:bg-gradient-to-r *:from-transparent *:via-[#5b9bfc7c] *:to-transparent *:transition-all *:bg-pos-0 *:bg-size-200 *:duration-300 *:h-[142px] *:w-72 px-3 bg-gradient-to-b from-transparent to-[#5b9bfc33] to-[99%] rounded-md lg:bg-none">
                   <li className="hover:bg-pos-60">
                     <div className="flex flex-col gap-3">
                       <h2 className="text-xl text-white">{t("cards.goals")}</h2>
                       <Link
                         href="/goals"
-                        className="text-sm lg:text-base p-2 rounded-md bg-[#0984e3] w-fit"
+                        className="text-sm p-1.5 rounded-md bg-[#0984e3] w-fit"
                       >
                         {t("shortcut")}
                       </Link>
@@ -214,8 +214,7 @@ const HomeFullpage = () => {
                       <a
                         className="text-sky-300"
                         href="https://freepik.com"
-                        target="_blank"
-                        rel="noopener noreferrer"
+                        target="blank"
                       >
                         Freepik
                       </a>
@@ -228,7 +227,7 @@ const HomeFullpage = () => {
                       </h2>
                       <Link
                         href="/research-achievement"
-                        className="text-sm lg:text-base p-2 rounded-md bg-[#0984e3] w-fit"
+                        className="text-sm p-1.5 rounded-md bg-[#0984e3] w-fit"
                       >
                         {t("shortcut")}
                       </Link>
@@ -245,8 +244,7 @@ const HomeFullpage = () => {
                       <a
                         className="text-sky-300"
                         href="https://freepik.com"
-                        target="_blank"
-                        rel="noopener noreferrer"
+                        target="blank"
                       >
                         Freepik
                       </a>
@@ -259,7 +257,7 @@ const HomeFullpage = () => {
                       </h2>
                       <Link
                         href="/pipeline"
-                        className="text-sm lg:text-base p-2 rounded-md bg-[#0984e3] w-fit"
+                        className="text-sm p-1.5 rounded-md bg-[#0984e3] w-fit"
                       >
                         {t("shortcut")}
                       </Link>
@@ -276,8 +274,7 @@ const HomeFullpage = () => {
                       <a
                         className="text-sky-300"
                         href="https://freepik.com"
-                        target="_blank"
-                        rel="noopener noreferrer"
+                        target="blank"
                       >
                         Freepik
                       </a>
@@ -290,7 +287,7 @@ const HomeFullpage = () => {
                       </h2>
                       <Link
                         href="/validation-service"
-                        className="text-sm lg:text-base p-2 rounded-md bg-[#0984e3] w-fit"
+                        className="text-sm p-1.5 rounded-md bg-[#0984e3] w-fit"
                       >
                         {t("shortcut")}
                       </Link>
@@ -307,8 +304,7 @@ const HomeFullpage = () => {
                       <a
                         className="text-sky-300"
                         href="https://freepik.com"
-                        target="_blank"
-                        rel="noopener noreferrer"
+                        target="blank"
                       >
                         Freepik
                       </a>
@@ -321,7 +317,7 @@ const HomeFullpage = () => {
                       </h2>
                       <Link
                         href="/culture-medium"
-                        className="text-sm lg:text-base p-2 rounded-md bg-[#0984e3] w-fit"
+                        className="text-sm p-1.5 rounded-md bg-[#0984e3] w-fit"
                       >
                         {t("shortcut")}
                       </Link>
@@ -338,8 +334,7 @@ const HomeFullpage = () => {
                       <a
                         className="text-sky-300"
                         href="https://freepik.com"
-                        target="_blank"
-                        rel="noopener noreferrer"
+                        target="blank"
                       >
                         Freepik
                       </a>
@@ -353,7 +348,7 @@ const HomeFullpage = () => {
               >
                 <div
                   className={cn(
-                    "col-span-3 lg:pl-44 lg:pt-32 lg:opacity-0 transition-opacity duration-500 delay-500",
+                    "col-span-3 lg:pl-44 lg:pt-28 2xl:pt-32 lg:opacity-0 transition-opacity duration-500 delay-500",
                     [2, 3].includes(pageIndex) && "!opacity-100"
                   )}
                 >
@@ -361,11 +356,14 @@ const HomeFullpage = () => {
                     T E C H N O L O G Y
                   </h1>
                   <h2 className="text-3xl lg:text-4xl font-light mt-3">
-                    보다 전문적인 기술을
+                    {t("technology.title.first")}
                     <br />
-                    자랑하는 <span className="font-semibold">Stem Medix</span>
+                    {t("technology.title.second")}{" "}
+                    <span className="font-semibold">
+                      {t("technology.title.point")}
+                    </span>
                   </h2>
-                  <div className="flex flex-wrap justify-center lg:justify-start gap-7 lg:gap-[2.1rem] mt-8 lg:mt-12 *:flex *:flex-col *:size-64 *:lg:w-48 *:lg:max-h-64 *:lg-xl:size-56 *:xl:!size-64 *:rounded-3xl *:bg-[#eff3f7] *:px-7 *:pt-3 *:pb-7 *:relative">
+                  <div className="flex flex-wrap justify-center lg:justify-start gap-7 lg:gap-[2.1rem] mt-8 lg:mt-12 *:flex *:flex-col *:w-64 *:h-[17rem] *:lg:w-48 *:lg:max-h-64 *:lg-xl:size-56 *:xl:max-h-none *:xl:!w-64 *:xl:!h-[17rem] *:rounded-3xl *:bg-[#eff3f7] *:px-7 *:pt-3 *:pb-7 *:relative">
                     <div className="group/techItem">
                       <div className="bg-gradient-to-r from-blue-500 to-indigo-500 group-hover/techItem:blur-md absolute top-0 left-0 size-full -z-10 rounded-3xl transition-[filter] duration-200" />
                       <span className="absolute left-4 top-1.5 text-[0.65rem] lg:text-[0.6rem] xl:text-[0.65rem]">
@@ -387,16 +385,16 @@ const HomeFullpage = () => {
                         alt="plan-image"
                       />
                       <h1 className="font-medium text-[1.33rem] lg:text-[1.1rem] xl:[1.33rem]">
-                        파이프라인
+                        {t("technology.items.pipeline.title")}
                       </h1>
                       <p className="text-neutral-600 text-[15px] mt-1 z-10 lg:text-[12px] xl:text-[15px]">
-                        기반 핵심 파이프라인
+                        {t("technology.items.pipeline.description")}
                       </p>
                       <Link
                         className="mt-auto relative -left-1 -bottom-2 w-fit px-2.5 py-1.5 lg:px-2 lg:py-1 lg:text-sm xl:px-2.5 xl:py-1.5 xl:text-base  bg-[#0984e3] text-white rounded-lg"
                         href="/pipeline"
                       >
-                        바로가기
+                        {t("shortcut")}
                       </Link>
                     </div>
                     <div className="group/techItem">
@@ -420,16 +418,16 @@ const HomeFullpage = () => {
                         alt="cell-image"
                       />
                       <h1 className="font-medium text-[1.33rem] lg:text-[1.1rem] xl:[1.33rem]">
-                        SM-101(SR-1)
+                        {t("technology.items.sm_101.title")}
                       </h1>
                       <p className="text-neutral-600 text-[15px] mt-1 lg:text-[12px] xl:text-[15px]">
-                        Stem Medix의 주요 기술
+                        {t("technology.items.sm_101.description")}
                       </p>
                       <Link
                         className="mt-auto relative -left-1 -bottom-2 w-fit px-2.5 py-1.5 lg:px-2 lg:py-1 lg:text-sm xl:px-2.5 xl:py-1.5 xl:text-base  bg-[#0984e3] text-white rounded-lg"
                         href="/sm-101"
                       >
-                        바로가기
+                        {t("shortcut")}
                       </Link>
                     </div>
                     <div className="group/techItem">
@@ -453,16 +451,16 @@ const HomeFullpage = () => {
                         alt="validation-image"
                       />
                       <h1 className="font-medium text-[1.33rem] lg:text-[1.1rem] xl:[1.33rem]">
-                        유효성 평가 서비스
+                        {t("technology.items.validation_service.title")}
                       </h1>
                       <p className="text-neutral-600 text-[15px] mt-1 lg:text-[12px] xl:text-[15px]">
-                        신속하고 전문적인 평가 서비스
+                        {t("technology.items.validation_service.description")}
                       </p>
                       <Link
                         className="mt-auto relative -left-1 -bottom-2 w-fit px-2.5 py-1.5 lg:px-2 lg:py-1 lg:text-sm xl:px-2.5 xl:py-1.5 xl:text-base  bg-[#0984e3] text-white rounded-lg"
                         href="/sm-101"
                       >
-                        바로가기
+                        {t("shortcut")}
                       </Link>
                     </div>
                   </div>
@@ -489,7 +487,7 @@ const HomeFullpage = () => {
                 </div>
               </div>
               <footer
-                className="section !h-fit !min-h-fit bg-neutral-50 pt-5 py-7 lg:py-5"
+                className="section !h-fit !min-h-fit bg-neutral-50 pt-5 py-10 lg:pt-5 lg:pb-3"
                 data-anchor="footer"
               >
                 <div className="flex flex-col w-full mx-auto gap-3 px-5 md:px-12 lg:px-0 lg:max-w-[700px]">
@@ -498,7 +496,7 @@ const HomeFullpage = () => {
                       className="font-semibold text-neutral-700 hover:text-neutral-900 transition-colors"
                       href="/privacy-policy"
                     >
-                      개인정보처리방침
+                      {t("footer.privacy_policy")}
                     </Link>
                   </div>
                   <hr />
@@ -512,22 +510,21 @@ const HomeFullpage = () => {
                     />
                     <ul className="flex flex-wrap gap-x-7 gap-y-2 *:font-bold *:text-neutral-500 *:text-sm h-fit">
                       <li>
-                        상호명{" "}
+                        {t("footer.titles.company")}{" "}
                         <span className="font-normal text-nuetral-300">
-                          Stem Medix
+                          {t("footer.contents.company")}
                         </span>
                       </li>
                       <li>
-                        이메일{" "}
+                        {t("footer.titles.email")}{" "}
                         <span className="font-normal text-nuetral-300">
-                          0000@0000.com
+                          {t("footer.contents.email")}
                         </span>
                       </li>
                       <li>
-                        주소{" "}
+                        {t("footer.titles.address")}{" "}
                         <span className="font-normal text-nuetral-300">
-                          경상남도 양산시 물금읍 범어리 부산대학로49 ,
-                          (부산대학교 양산캠퍼스 --) ---호
+                          {t("footer.contents.address")}
                         </span>
                       </li>
                     </ul>

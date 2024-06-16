@@ -7,7 +7,15 @@ import { useRecoilValue, useSetRecoilState } from "recoil";
 import { isLocaleToggleHoverAtom, pageIndexAtom } from "./atoms";
 import { cn } from "./utils/cn";
 
-const LocaleToggle = ({ whiteSections }: { whiteSections: number[] }) => {
+const LocaleToggle = ({
+  whiteSections,
+  scrollY,
+  isHome,
+}: {
+  whiteSections: number[];
+  scrollY: number;
+  isHome: boolean;
+}) => {
   const currentLocale = useCurrentLocale();
   const changeLocale = useChangeLocale();
   const pageIndex = useRecoilValue(pageIndexAtom);
@@ -33,9 +41,12 @@ const LocaleToggle = ({ whiteSections }: { whiteSections: number[] }) => {
       <span
         className={cn(
           "flex justify-between items-center w-full group-hover/localeToggle:bg-accent cursor-pointer transition-colors px-3 py-1.5 text-center text-[16px] font-medium lg:group-hover/nav:text-black lg:group-hover/localeToggle:!text-white group-hover/localeToggle:text-white text-white",
-          whiteSections.includes(pageIndex) || [2, 3].includes(pageIndex)
+          (isHome && whiteSections.includes(pageIndex)) ||
+            [2, 3].includes(pageIndex)
             ? "text-white"
-            : "lg:text-black"
+            : "lg:text-black",
+          !isHome && "lg:text-white",
+          !isHome && scrollY > 150 && "lg:text-black"
         )}
       >
         {currentLocale === "ko" ? "KOR" : "ENG"}
