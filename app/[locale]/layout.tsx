@@ -1,4 +1,3 @@
-import { setStaticParamsLocale } from "next-international/server";
 import React from "react";
 import { Provider } from "@/components/providers/provider";
 import Nav from "@/components/nav";
@@ -10,10 +9,8 @@ const LocaleLayout = async ({
   children: React.ReactNode;
   params: { locale: string };
 }) => {
-  const locale = params.locale ?? "ko";
-  setStaticParamsLocale(locale);
   return (
-    <Provider locale={locale}>
+    <Provider locale={params.locale}>
       <Nav />
       {children}
     </Provider>

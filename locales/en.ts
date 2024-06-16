@@ -85,7 +85,7 @@ export default {
     titles: {
       company: "Company",
       email: "Email",
-      address: "address",
+      address: "Address",
     },
     contents: {
       company: "Stem Medix",
@@ -93,5 +93,4 @@ export default {
       address: "영어 버전 주소",
     },
   },
-  notFound: "Page not found",
 } as const;

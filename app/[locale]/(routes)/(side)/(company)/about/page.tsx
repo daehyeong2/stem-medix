@@ -1,11 +1,22 @@
-"use client";
-
 import BreadCrumb from "@/components/breadcrumb";
-import { useI18n } from "@/locales/client";
+import { getI18n } from "@/locales/server";
+import { setStaticParamsLocale } from "next-international/server";
 import Image from "next/image";
 
-const AboutPage = () => {
-  const t = useI18n();
+export const generateMetadata = async () => {
+  const t = await getI18n();
+  return {
+    title: t("nav.titles.company"),
+  };
+};
+
+const AboutPage = async ({
+  params: { locale },
+}: {
+  params: { locale: string };
+}) => {
+  setStaticParamsLocale(locale);
+  const t = await getI18n();
   const companyList = [
     {
       title: t("nav.contents.company.about"),

@@ -1,9 +1,17 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
-import { getI18n } from "@/locales/server";
+import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
 
-const Footer = async () => {
-  const t = await getI18n();
+const Footer = () => {
+  const pathname = usePathname();
+  const [locale, setLocale] = useState("ko");
+  const isKo = locale === "ko";
+  useEffect(() => {
+    setLocale(pathname.split("/")[1]);
+  }, [pathname]);
   return (
     <footer
       className="section !h-fit !min-h-fit bg-neutral-50 pt-5 py-10 lg:pt-5 lg:pb-3"
@@ -15,7 +23,7 @@ const Footer = async () => {
             className="font-semibold text-neutral-700 hover:text-neutral-900 transition-colors"
             href="/privacy-policy"
           >
-            {t("footer.privacy_policy")}
+            {isKo ? "개인정보처리방침" : "Privacy Policy"}
           </Link>
         </div>
         <hr />
@@ -29,21 +37,21 @@ const Footer = async () => {
           />
           <ul className="flex flex-wrap gap-x-7 gap-y-2 *:font-bold *:text-neutral-500 *:text-sm h-fit">
             <li>
-              {t("footer.titles.company")}{" "}
+              {isKo ? "상호명" : "Company"}{" "}
+              <span className="font-normal text-nuetral-300">Stem Medix</span>
+            </li>
+            <li>
+              {isKo ? "이메일" : "Email"}{" "}
               <span className="font-normal text-nuetral-300">
-                {t("footer.contents.company")}
+                0000@0000.com
               </span>
             </li>
             <li>
-              {t("footer.titles.email")}{" "}
+              {isKo ? "주소" : "Address"}{" "}
               <span className="font-normal text-nuetral-300">
-                {t("footer.contents.email")}
-              </span>
-            </li>
-            <li>
-              {t("footer.titles.address")}{" "}
-              <span className="font-normal text-nuetral-300">
-                {t("footer.contents.address")}
+                {isKo
+                  ? "경상남도 양산시 물금읍 범어리 부산대학로49, (부산대학교 양산캠퍼스 --) ---호"
+                  : "영어 버전 주소"}
               </span>
             </li>
           </ul>
