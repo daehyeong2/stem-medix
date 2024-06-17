@@ -14,7 +14,7 @@ const Footer = () => {
   }, [pathname]);
   return (
     <footer
-      className="section !h-fit !min-h-fit bg-neutral-50 pt-5 py-10 lg:pt-5 lg:pb-3"
+      className="!h-fit !min-h-fit bg-neutral-50 pt-5 py-10 lg:pt-5 lg:pb-3"
       data-anchor="footer"
     >
       <div className="flex flex-col w-full mx-auto gap-3 px-5 md:px-12 lg:px-0 lg:max-w-[700px]">

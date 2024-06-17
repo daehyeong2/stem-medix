@@ -131,7 +131,7 @@ const HomeFullpage = () => {
             <ReactFullpage.Wrapper>
               <HomeSwiper />
               <div
-                className="section !flex flex-col gap-14 py-16 box-border justify-center items-center !min-h-20 lg:!min-h-[600px] h-fit lg:h-screen relative text-white"
+                className="section !flex flex-col gap-14 py-16 box-border justify-center items-center !min-h-20 lg:!min-h-[600px] !h-fit lg:h-screen relative text-white"
                 data-anchor="company"
               >
                 <Image
