@@ -131,7 +131,7 @@ const HomeFullpage = () => {
             <ReactFullpage.Wrapper>
               <HomeSwiper />
               <div
-                className="section !flex flex-col gap-14 py-16 box-border justify-center items-center !min-h-20 lg:!min-h-[600px] !h-fit lg:h-screen relative text-white"
+                className="section !flex flex-col gap-14 py-16 box-border justify-center items-center !min-h-20 !h-fit lg:!h-screen relative text-white"
                 data-anchor="company"
               >
                 <Image
@@ -155,7 +155,7 @@ const HomeFullpage = () => {
                   >
                     {currentLocale === "ko" ? (
                       <>
-                        <span className="font-semibold text-sky-200">
+                        <span className="font-semibold underline">
                           Stem Medix
                         </span>
                         는{" "}
@@ -352,10 +352,10 @@ const HomeFullpage = () => {
                     [2, 3].includes(pageIndex) && "!opacity-100"
                   )}
                 >
-                  <h1 className="text-base lg:text-[1.1rem] font-medium text-neutral-400 tracking-[0.25rem] mt-7">
-                    T E C H N O L O G Y
+                  <h1 className="flex flex-wrap gap-x-3 gap-y-1 lg:gap-5 items-center text-base lg:text-[1.1rem] font-medium text-neutral-400 tracking-[0.25rem] mt-7 *:text-sm">
+                    <span>T E C H N O L O G Y</span>&<span>P R O D U C T</span>
                   </h1>
-                  <h2 className="text-3xl lg:text-4xl font-light mt-3">
+                  <h2 className="text-3xl lg:text-4xl font-light mt-6 lg:mt-3">
                     {t("technology.title.first")}
                     <br />
                     {t("technology.title.second")}{" "}

@@ -45,11 +45,11 @@ const BreadCrumbItem = ({
   const pathnameFull = usePathname();
   const pathname = pathnameFull.slice(3);
   return (
-    <li className="relative flex cursor-pointer">
+    <li className="relative flex cursor-pointer w-[50%] lg:w-52">
       <span
         onClick={onClick}
         className={cn(
-          "px-5 py-[0.9rem] box-content w-52 text-lg flex justify-between items-center hover:text-sky-500",
+          "px-5 py-[0.9rem] box-content text-lg w-full flex justify-between items-center hover:text-sky-500",
           number === 1 && "text-sky-500"
         )}
       >

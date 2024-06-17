@@ -79,9 +79,9 @@ const HomeSwiper = () => {
             </p>
             <Link
               className="mt-3 px-2.5 py-3 bg-[#0984e3] hover:bg-[#0087ee] rounded-lg font-semibold w-fit transition-colors"
-              href="/about"
+              href="/pipeline"
             >
-              {t("shortcuts.main_area")}
+              {t("shortcuts.pipeline")}
             </Link>
           </div>
         </SwiperSlide>

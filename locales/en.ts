@@ -50,7 +50,7 @@ export default {
   shortcut: "Go to the page",
   shortcuts: {
     company_introduction: "Go to company introduction",
-    main_area: "Go to main areas",
+    pipeline: "Go to pipeline",
   },
   cards: {
     goals: "Growth goals",

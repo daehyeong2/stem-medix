@@ -50,7 +50,7 @@ export default {
   shortcut: "바로가기",
   shortcuts: {
     company_introduction: "회사 소개 바로가기",
-    main_area: "주요 분야 바로가기",
+    pipeline: "파이프라인 바로가기",
   },
   cards: {
     goals: "성장 목표",

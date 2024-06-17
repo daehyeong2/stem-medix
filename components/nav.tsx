@@ -5,7 +5,7 @@ import Link from "next/link";
 import LocaleToggle from "./locale-toggle";
 import { useEffect, useState } from "react";
 import { useI18n } from "@/locales/client";
-import { useRecoilValue } from "recoil";
+import { useRecoilState, useRecoilValue } from "recoil";
 import { isLocaleToggleHoverAtom, pageIndexAtom } from "./atoms";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
@@ -19,7 +19,7 @@ const Nav = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const pathname = usePathname();
   const isHome = ["/ko", "/en"].includes(pathname);
-  const pageIndex = useRecoilValue(pageIndexAtom);
+  const [pageIndex, setPageIndex] = useRecoilState(pageIndexAtom);
   const isLocaleToggleHover = useRecoilValue(isLocaleToggleHoverAtom);
   const [isMoving, setIsMoving] = useState(false);
   const whiteSections = [0, 1];
@@ -171,6 +171,7 @@ const Nav = () => {
           !isHome && scrollY > 150 && "lg:h-14 lg:w-[135px]"
         )}
         href="/"
+        onClick={() => setPageIndex(0)}
       >
         <Image
           className="object-cover object-center"
