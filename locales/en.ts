@@ -109,6 +109,53 @@ export default {
         },
       },
     },
+    goals: {
+      title: "Growth goals",
+      description: "Introducing Stem Medix’s commercialization strategy.",
+      contents: {
+        "2024_the_first_half": {
+          title: "First half of 2024",
+          target: "Providing platform services and attracting customers",
+          list: {
+            0: "Establishment of a vascular stem cell effectiveness evaluation platform",
+            1: "Promotion progress",
+          },
+        },
+        "2024_second_half": {
+          title: "Second half of 2024",
+          target:
+            "Prototype design, prototype production and customer attraction",
+          list: {
+            0: "Production of artificial blood vessels and use of teaching materials",
+            1: "Vessel on chip production",
+            2: "New product promotion progress",
+          },
+        },
+        2025: {
+          title: "2025",
+          target: "Prototype production through outsourcing services",
+          list: {
+            0: "Production of stem cell customized culture medium",
+          },
+        },
+        2026: {
+          title: "2026",
+          target:
+            "Prototype production and customer attraction through outsourcing services",
+          list: {
+            0: "Production of culture medium to inhibit aging",
+            1: "New product promotion",
+          },
+        },
+        2030: {
+          title: "2030",
+          target: "Research for IND approval",
+          list: {
+            0: "Cell remedy development",
+          },
+        },
+      },
+    },
   },
   shortcut: "Go to the page",
   shortcuts: {

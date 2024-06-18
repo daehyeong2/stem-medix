@@ -64,7 +64,7 @@ const BreadCrumbItem = ({
       </span>
       <motion.ul
         className={cn(
-          "absolute top-[calc(100%_+_1px)] flex flex-col opacity-0 pointer-events-none transition-opacity overflow-hidden duration-200 w-full bg-neutral-50",
+          "absolute top-[calc(100%_+_1px)] flex flex-col opacity-0 pointer-events-none transition-opacity overflow-hidden duration-200 w-full bg-neutral-50 z-20",
           isOpen && "opacity-100 pointer-events-auto"
         )}
         variants={listVariants}

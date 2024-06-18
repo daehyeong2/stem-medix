@@ -540,6 +540,9 @@ const HomeFullpage = () => {
                           {t("footer.contents.address")}
                         </span>
                       </li>
+                      <h3 className="text-sm !text-neutral-400 !font-medium mt-1">
+                        Copyright ⓒ 2024 Stem Medix INC. All Rights Reserved.
+                      </h3>
                     </ul>
                   </div>
                 </div>

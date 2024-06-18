@@ -46,6 +46,7 @@ const MenuListItem = ({
   };
   const onMove = () => {
     setIsMenuOpen(false);
+    document.body.style.overflow = "unset";
   };
   return (
     <li className="flex flex-col">
