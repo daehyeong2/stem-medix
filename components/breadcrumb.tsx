@@ -39,7 +39,7 @@ const BreadCrumb = ({ list, title1, title2 }: IPropsBreadCrumb) => {
   ];
   return (
     <div className="border-b-neutral-300 border-b">
-      <ul className="flex items-center gap-1 max-w-[1200px] lg:px-8 mx-auto">
+      <ul className="flex items-center gap-1 max-w-[1200px] px-2 md:px-8 mx-auto">
         <Link className="mr-9 hidden md:block" href="/">
           <FontAwesomeIcon className="text-xl text-blue-500" icon={faHome} />
         </Link>
