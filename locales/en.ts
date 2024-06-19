@@ -156,6 +156,20 @@ export default {
         },
       },
     },
+    organization: {
+      title: "Organization Chart",
+      description:
+        "A company that creates something new that does not exist in the world based on innovative R&D technology",
+      chart: {
+        ceo: "CEO 권상모(영어명 필요)",
+        contents: {
+          rnd_partner: "R&D partners",
+          development_manager: "Development Manager",
+          jina_pass: "Gina Pass",
+          team_leader: "Team Leader",
+        },
+      },
+    },
   },
   shortcut: "Go to the page",
   shortcuts: {

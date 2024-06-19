@@ -150,6 +150,20 @@ export default {
         },
       },
     },
+    organization: {
+      title: "조직도",
+      description:
+        "혁신적인 R&D기술을 바탕으로 ​세상에 없는 새로움을 창조하는 기업",
+      chart: {
+        ceo: "대표 권상모",
+        contents: {
+          rnd_partner: "R&D 파트너사",
+          development_manager: "개발 총괄",
+          jina_pass: "지나패스",
+          team_leader: "팀장",
+        },
+      },
+    },
   },
   shortcut: "바로가기",
   shortcuts: {
