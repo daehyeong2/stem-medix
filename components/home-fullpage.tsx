@@ -30,7 +30,7 @@ const CustomNavigation = ({
   return (
     <div
       className={cn(
-        "opacity-100 hidden lg:tall:flex items-center fixed left-4 top-0 bottom-0 my-auto z-20 transition-opacity pointer-events-auto",
+        "opacity-100 hidden lg:tall:flex items-center fixed left-4 top-0 bottom-0 my-auto z-10 transition-opacity pointer-events-auto",
         sections.length - 1 < pageIndex && "opacity-0 pointer-events-none"
       )}
     >
