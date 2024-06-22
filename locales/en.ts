@@ -170,6 +170,64 @@ export default {
         },
       },
     },
+    way_to_come: {
+      title: {
+        first: "'s",
+        second: "Location information",
+      },
+      google_map: "Go to Google Map",
+      more_info: "More information",
+      address: {
+        title: "Address",
+        content: "영어 버전 주소",
+      },
+      phone_number: {
+        title: "Representative number",
+        content: "000-0000-0000",
+      },
+      email: {
+        title: "Email",
+        content: "0000@0000.com",
+      },
+    },
+    pipeline: {
+      title: "Pipeline",
+      description:
+        "New drug development pipeline focused on chronic intractable vascular diseases for a better world",
+      table: {
+        header: {
+          pipeline: "Pipeline",
+          indications: "Indications",
+        },
+        content: {
+          sm_101: {
+            title: "SM-101<br/>(SR-1)",
+            0: {
+              indications: "Diabetic foot disease",
+            },
+            1: {
+              indications: "cardiovascular disease",
+            },
+          },
+          sm_102: {
+            title: "SM-102<br/>(SR-1 NP)",
+            indications: "bone regeneration",
+          },
+          sm_103: {
+            title: "SM-103<br/>(MHY-1684)",
+            indications: "Diabetic myocardial infarction",
+          },
+          sm_104: {
+            title: "SM-104<br/>(myocardial infarction)",
+            indications: "Diabetic myocardial infarction",
+          },
+          sm_01: {
+            title: "SM-01<br/>(Oleuropein)",
+            indications: "Cancer (anticancer drug)",
+          },
+        },
+      },
+    },
   },
   shortcut: "Go to the page",
   shortcuts: {

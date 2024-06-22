@@ -39,6 +39,15 @@ const AboutPage = async ({
         <h1 className="text-4xl lg:text-5xl font-light text-white">
           {t("nav.titles.technology")}
         </h1>
+        <span className="absolute right-3 bottom-3 text-sm text-white">
+          Image - Designed by <a
+                        className="text-sky-300"
+                        href="https://freepik.com"
+                        target="blank"
+                      >
+                        Freepik
+                      </a>
+          </span>
       </div>
       <BreadCrumb
         title1={t("nav.titles.technology")}
@@ -46,16 +55,20 @@ const AboutPage = async ({
         list={technologyList}
       />
       <div className="flex flex-col px-5">
-        <h1 className="mt-7 mx-auto text-3xl lg:text-4xl">파이프라인</h1>
+        <h1 className="mt-7 mx-auto text-3xl lg:text-4xl">
+          {t("routes.pipeline.title")}
+        </h1>
         <h2 className="mt-3 mx-auto text-sm lg:text-base text-center">
-          더 나은 세상을 위한, 만성 난치성 혈관질환 중심의 신약 개발 파이프라인
+          {t("routes.pipeline.description")}
         </h2>
         <div className="flex w-full overflow-auto pb-3">
           <table className="text-center w-full min-w-0 max-w-[calc(100vw-40px)] lg:min-w-[900px] lg:max-w-[1200px] mt-14 *:*:*:whitespace-nowrap mx-auto">
             <thead>
               <tr className="text-white *:!bg-black *:px-5 *:py-2 *:border-l *:border-white">
-                <th className="border-none">파이프라인</th>
-                <th>적응증</th>
+                <th className="border-none">
+                  {t("routes.pipeline.table.header.pipeline")}
+                </th>
+                <th>{t("routes.pipeline.table.header.indications")}</th>
                 <th>Discovery</th>
                 <th>Preclinical</th>
                 <th>Phase I</th>
@@ -70,9 +83,24 @@ const AboutPage = async ({
                   className="h-32 !bg-[#ececec] border-none font-medium text-neutral-800"
                   rowSpan={2}
                 >
-                  SM-101 (SR-1)
+                  {t("routes.pipeline.table.content.sm_101.title")
+                    .split("<br/>")
+                    .map((word, idx) =>
+                      idx === 1 ? (
+                        <span key={idx}>
+                          <br />
+                          {word}
+                        </span>
+                      ) : (
+                        <span key={idx}>
+                        {word}
+                        </span>
+                      )
+                    )}
                 </td>
-                <td>당뇨병성 족부질환</td>
+                <td>
+                  {t("routes.pipeline.table.content.sm_101.0.indications")}
+                </td>
                 <td>
                   <div className="flex relative items-center">
                     <div className="h-[26px] bg-blue-600 group-[:hover:not(:has(#no-group:hover))]:!bg-green-500 transition-all duration-100 group-[:hover:not(:has(#no-group:hover))]:-translate-y-1 w-[75%]" />
@@ -85,7 +113,9 @@ const AboutPage = async ({
                 <td></td>
               </tr>
               <tr className="group">
-                <td>심혈관 질환</td>
+                <td>
+                  {t("routes.pipeline.table.content.sm_101.1.indications")}
+                </td>
                 <td>
                   <div className="flex relative items-center">
                     <div className="h-[26px] bg-blue-500 group-hover:bg-green-400 transition-all duration-100 group-hover:-translate-y-1 w-[75%]" />
@@ -99,11 +129,22 @@ const AboutPage = async ({
               </tr>
               <tr className="group">
                 <td className="font-medium text-neutral-800">
-                  SM-102
-                  <br />
-                  (SR-1 NP)
+                  {t("routes.pipeline.table.content.sm_102.title")
+                    .split("<br/>")
+                    .map((word, idx) =>
+                      idx === 1 ? (
+                        <span key={idx}>
+                          <br />
+                          {word}
+                        </span>
+                      ) : (
+                        <span key={idx}>
+                        {word}
+                        </span>
+                      )
+                    )}
                 </td>
-                <td>골재생</td>
+                <td>{t("routes.pipeline.table.content.sm_102.indications")}</td>
                 <td>
                   <div className="flex relative items-center">
                     <div className="h-[26px] bg-blue-400 group-hover:bg-green-300 transition-all duration-100 group-hover:-translate-y-1 w-[75%]" />
@@ -117,11 +158,22 @@ const AboutPage = async ({
               </tr>
               <tr className="group">
                 <td className="font-medium text-neutral-800">
-                  SM-103
-                  <br />
-                  (MHY-1684)
+                  {t("routes.pipeline.table.content.sm_103.title")
+                    .split("<br/>")
+                    .map((word, idx) =>
+                      idx === 1 ? (
+                        <span key={idx}>
+                          <br />
+                          {word}
+                        </span>
+                      ) : (
+                        <span key={idx}>
+                        {word}
+                        </span>
+                      )
+                    )}
                 </td>
-                <td>당뇨병성 심근경색</td>
+                <td>{t("routes.pipeline.table.content.sm_103.indications")}</td>
                 <td>
                   <div className="flex relative items-center">
                     <div className="h-[26px] bg-blue-300 group-hover:bg-green-200 transition-all duration-100 group-hover:-translate-y-1 w-[75%]" />
@@ -135,11 +187,22 @@ const AboutPage = async ({
               </tr>
               <tr className="group">
                 <td className="font-medium text-neutral-800">
-                  SM-104
-                  <br />
-                  (심근경색)
+                  {t("routes.pipeline.table.content.sm_104.title")
+                    .split("<br/>")
+                    .map((word, idx) =>
+                      idx === 1 ? (
+                        <span key={idx}>
+                          <br />
+                          {word}
+                        </span>
+                      ) : (
+                        <span key={idx}>
+                        {word}
+                        </span>
+                      )
+                    )}
                 </td>
-                <td>당뇨병성 심근경색</td>
+                <td>{t("routes.pipeline.table.content.sm_104.indications")}</td>
                 <td>
                   <div className="flex relative items-center">
                     <div className="h-[26px] bg-blue-200 group-hover:bg-green-100 transition-all duration-100 group-hover:-translate-y-1 w-[75%]" />
@@ -153,11 +216,22 @@ const AboutPage = async ({
               </tr>
               <tr className="group">
                 <td className="font-medium text-neutral-800">
-                  SM-01
-                  <br />
-                  (Oleuropein)
+                  {t("routes.pipeline.table.content.sm_01.title")
+                    .split("<br/>")
+                    .map((word, idx) =>
+                      idx === 1 ? (
+                        <span key={idx}>
+                          <br />
+                          {word}
+                        </span>
+                      ) : (
+                        <span key={idx}>
+                        {word}
+                        </span>
+                      )
+                    )}
                 </td>
-                <td>Cancer (항암제)</td>
+                <td>{t("routes.pipeline.table.content.sm_01.indications")}</td>
                 <td>
                   <div className="flex relative items-center">
                     <div className="h-[26px] bg-blue-100 group-hover:bg-green-50 transition-all duration-100 group-hover:-translate-y-1 w-[75%]" />

@@ -164,6 +164,65 @@ export default {
         },
       },
     },
+    way_to_come: {
+      title: {
+        first: "의",
+        second: "위치를 안내드립니다.",
+      },
+      google_map: "구글 지도 바로가기",
+      more_info: "상세 정보",
+      address: {
+        title: "주소",
+        content:
+          "경상남도 양산시 물금읍 범어리 부산대학로49, (부산대학교 양산캠퍼스 --) ---호",
+      },
+      phone_number: {
+        title: "대표 번호",
+        content: "000-0000-0000",
+      },
+      email: {
+        title: "이메일",
+        content: "0000@0000.com",
+      },
+    },
+    pipeline: {
+      title: "파이프라인",
+      description:
+        "더 나은 세상을 위한, 만성 난치성 혈관질환 중심의 신약 개발 파이프라인",
+      table: {
+        header: {
+          pipeline: "파이프라인",
+          indications: "적응증",
+        },
+        content: {
+          sm_101: {
+            title: "SM-101<br/>(SR-1)",
+            0: {
+              indications: "당뇨병성 족부질환",
+            },
+            1: {
+              indications: "심혈관 질환",
+            },
+          },
+          sm_102: {
+            title: "SM-102<br/>(SR-1 NP)",
+            indications: "골재생",
+          },
+          sm_103: {
+            title: "SM-103<br/>(MHY-1684)",
+            indications: "당뇨병성 심근경색",
+          },
+          sm_104: {
+            title: "SM-104<br/>(심근경색)",
+            indications: "당뇨병성 심근경색",
+          },
+          sm_01: {
+            title: "SM-01<br/>(Oleuropein)",
+            indications: "Cancer (항암제)",
+          },
+        },
+      },
+    },
   },
   shortcut: "바로가기",
   shortcuts: {
