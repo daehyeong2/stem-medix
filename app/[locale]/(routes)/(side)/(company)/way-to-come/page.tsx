@@ -11,8 +11,6 @@ export const generateMetadata = async () => {
   };
 };
 
-const KAKAO_SDK_URL = `//dapi.kakao.com/v2/maps/sdk.js?appkey=6178bbad987e0e582ae88ed3a2ef1794&autoload=false`;
-
 const AboutPage = async ({
   params: { locale },
 }: {
