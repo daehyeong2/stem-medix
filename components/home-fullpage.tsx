@@ -217,6 +217,7 @@ const HomeFullpage = () => {
                         className="text-sky-300"
                         href="https://freepik.com"
                         target="blank"
+                        rel="noopener noreferrer"
                       >
                         Freepik
                       </a>
@@ -247,6 +248,7 @@ const HomeFullpage = () => {
                         className="text-sky-300"
                         href="https://freepik.com"
                         target="blank"
+                        rel="noopener noreferrer"
                       >
                         Freepik
                       </a>
@@ -277,6 +279,7 @@ const HomeFullpage = () => {
                         className="text-sky-300"
                         href="https://freepik.com"
                         target="blank"
+                        rel="noopener noreferrer"
                       >
                         Freepik
                       </a>
@@ -307,6 +310,7 @@ const HomeFullpage = () => {
                         className="text-sky-300"
                         href="https://freepik.com"
                         target="blank"
+                        rel="noopener noreferrer"
                       >
                         Freepik
                       </a>
@@ -337,6 +341,7 @@ const HomeFullpage = () => {
                         className="text-sky-300"
                         href="https://freepik.com"
                         target="blank"
+                        rel="noopener noreferrer"
                       >
                         Freepik
                       </a>

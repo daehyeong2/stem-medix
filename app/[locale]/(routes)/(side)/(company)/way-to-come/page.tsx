@@ -3,7 +3,7 @@ import { getCurrentLocale, getI18n } from "@/locales/server";
 import { setStaticParamsLocale } from "next-international/server";
 import Image from "next/image";
 import Link from "next/link";
-import {cn} from "@/components/utils/cn"
+import { cn } from "@/components/utils/cn";
 
 export const generateMetadata = async () => {
   const t = await getI18n();
@@ -12,7 +12,7 @@ export const generateMetadata = async () => {
   };
 };
 
-const AboutPage = async ({
+const WayToComePage = async ({
   params: { locale },
 }: {
   params: { locale: string };
@@ -64,7 +64,12 @@ const AboutPage = async ({
           {t("routes.way_to_come.title.first")}
         </h1>
         <h2 className="text-2xl lg:text-3xl mt-5 relative">
-          <div className={cn("absolute left-2 lg:left-[0.65rem] hidden gap-4 lg:gap-[1.3rem] -top-1 *:size-[0.3rem] *:bg-black *:rounded-full", currentLocale === "ko" && "flex")}>
+          <div
+            className={cn(
+              "absolute left-2 lg:left-[0.65rem] hidden gap-4 lg:gap-[1.3rem] -top-1 *:size-[0.3rem] *:bg-black *:rounded-full",
+              currentLocale === "ko" && "flex"
+            )}
+          >
             <div />
             <div />
           </div>
@@ -117,4 +122,4 @@ const AboutPage = async ({
   );
 };
 
-export default AboutPage;
+export default WayToComePage;

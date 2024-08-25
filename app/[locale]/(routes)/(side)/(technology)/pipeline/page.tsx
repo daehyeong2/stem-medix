@@ -10,7 +10,7 @@ export const generateMetadata = async () => {
   };
 };
 
-const AboutPage = async ({
+const PipelinePage = async ({
   params: { locale },
 }: {
   params: { locale: string };
@@ -40,14 +40,16 @@ const AboutPage = async ({
           {t("nav.titles.technology")}
         </h1>
         <span className="absolute right-3 bottom-3 text-sm text-white">
-          Image - Designed by <a
-                        className="text-sky-300"
-                        href="https://freepik.com"
-                        target="blank"
-                      >
-                        Freepik
-                      </a>
-          </span>
+          Image - Designed by{" "}
+          <a
+            className="text-sky-300"
+            href="https://freepik.com"
+            target="blank"
+            rel="noopener noreferrer"
+          >
+            Freepik
+          </a>
+        </span>
       </div>
       <BreadCrumb
         title1={t("nav.titles.technology")}
@@ -92,9 +94,7 @@ const AboutPage = async ({
                           {word}
                         </span>
                       ) : (
-                        <span key={idx}>
-                        {word}
-                        </span>
+                        <span key={idx}>{word}</span>
                       )
                     )}
                 </td>
@@ -138,9 +138,7 @@ const AboutPage = async ({
                           {word}
                         </span>
                       ) : (
-                        <span key={idx}>
-                        {word}
-                        </span>
+                        <span key={idx}>{word}</span>
                       )
                     )}
                 </td>
@@ -167,9 +165,7 @@ const AboutPage = async ({
                           {word}
                         </span>
                       ) : (
-                        <span key={idx}>
-                        {word}
-                        </span>
+                        <span key={idx}>{word}</span>
                       )
                     )}
                 </td>
@@ -196,9 +192,7 @@ const AboutPage = async ({
                           {word}
                         </span>
                       ) : (
-                        <span key={idx}>
-                        {word}
-                        </span>
+                        <span key={idx}>{word}</span>
                       )
                     )}
                 </td>
@@ -225,9 +219,7 @@ const AboutPage = async ({
                           {word}
                         </span>
                       ) : (
-                        <span key={idx}>
-                        {word}
-                        </span>
+                        <span key={idx}>{word}</span>
                       )
                     )}
                 </td>
@@ -251,4 +243,4 @@ const AboutPage = async ({
   );
 };
 
-export default AboutPage;
+export default PipelinePage;

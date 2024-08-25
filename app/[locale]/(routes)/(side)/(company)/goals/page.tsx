@@ -12,7 +12,7 @@ export const generateMetadata = async () => {
   };
 };
 
-const AboutPage = async ({
+const GoalsPage = async ({
   params: { locale },
 }: {
   params: { locale: string };
@@ -180,4 +180,4 @@ const AboutPage = async ({
   );
 };
 
-export default AboutPage;
+export default GoalsPage;

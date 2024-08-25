@@ -228,6 +228,30 @@ export default {
         },
       },
     },
+    sm101: {
+      subtitle: "Stem Medix’s main technologies that will benefit the world",
+      related_materials: "SM-101(SR-1) Related Materials",
+      verified: "검증됨",
+      titles: {
+        1: "1) A greater number of stem cells can be obtained in the SM-101 treatment group​",
+        2: "2) Verification of anti-aging efficacy in SM-101 treatment group​",
+        3: "3) Verification of angiogenesis promotion through SM-101 treatment",
+        4: "4) SR-1 functional ability: increased migration",
+        5: "5) Verification of the efficacy of angiogenesis/bone regeneration in the SM-102 (SR-1 NP) group",
+      },
+      verification_of_increased_mobility:
+        "Verification of increased mobility in EPC treated with SR-1 compared to the existing renowned SDF-1alpha​",
+      history: {
+        title: "History",
+        contents: {
+          title: "Content",
+          0: "In 2010, the results of research and development on the drug StemRegenin-1 by Novartis and Script Laboratories were reported in Science​",
+          1: "Afterwards, clinical results were reported based on significant results from 2013 to 2016. There are no results after this, so detailed search results for this content",
+          2: "Afterwards, Novartis continued research under the name MGTA-456 through license-out to Megenta Therapeutics.",
+        },
+        related_materials: "References",
+      },
+    },
   },
   shortcut: "Go to the page",
   shortcuts: {

@@ -11,7 +11,7 @@ export const generateMetadata = async () => {
   };
 };
 
-const AboutPage = async ({
+const OrganizationPage = async ({
   params: { locale },
 }: {
   params: { locale: string };
@@ -64,6 +64,7 @@ const AboutPage = async ({
             src="/resources/image/organization-image.png"
             alt="collaboration-image"
             fill
+            sizes="288px"
           />
           <h1
             className={cn(
@@ -127,4 +128,4 @@ const AboutPage = async ({
   );
 };
 
-export default AboutPage;
+export default OrganizationPage;

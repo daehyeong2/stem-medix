@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 
-import { Pagination, Scrollbar, A11y, Autoplay } from "swiper/modules";
+import { Pagination, Scrollbar, Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import "swiper/css";
@@ -10,7 +10,7 @@ import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import { useI18n } from "@/locales/client";
 
-import "./custom-pagination.css";
+import "./css/home-custom-pagination.css";
 import Link from "next/link";
 
 const HomeSwiper = () => {
@@ -22,8 +22,7 @@ const HomeSwiper = () => {
     >
       <Swiper
         className="size-full active:cursor-grabbing"
-        modules={[Pagination, Scrollbar, A11y, Autoplay]}
-        navigation
+        modules={[Pagination, Scrollbar, Autoplay]}
         speed={300}
         loop
         autoplay={{
@@ -85,7 +84,7 @@ const HomeSwiper = () => {
             </Link>
           </div>
         </SwiperSlide>
-        <div id="containerForBullets"></div>
+        <div id="containerForBullets" />
       </Swiper>
     </div>
   );

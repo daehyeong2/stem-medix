@@ -1,0 +1,25 @@
+#sm101_containerForBullets {
+  position: absolute;
+  bottom: 0;
+  z-index: 10;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  background-color: rgba(0, 0, 0, 0.25);
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.sm101_swiper-custom-bullet {
+  display: block;
+  height: 4px;
+  width: 40px;
+  background-color: rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+  border-radius: 9999px;
+}
+
+.sm101_swiper-custom-bullet.sm101_swiper-custom-bullet-active {
+  background-color: white;
+}

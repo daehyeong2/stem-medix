@@ -19,6 +19,7 @@ const Nav = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const pathname = usePathname();
   const isHome = ["/ko", "/en"].includes(pathname);
+  const currentPathname = pathname.slice(3);
   const [pageIndex, setPageIndex] = useRecoilState(pageIndexAtom);
   const isLocaleToggleHover = useRecoilValue(isLocaleToggleHoverAtom);
   const [isMoving, setIsMoving] = useState(false);
@@ -135,22 +136,43 @@ const Nav = () => {
         </button>
         <ul className="flex flex-col">
           <MenuListItem
-            open
+            open={
+              isHome
+                ? true
+                : companyList.findLastIndex(
+                    (item) => item.href === currentPathname
+                  ) !== -1
+            }
             title={t("nav.titles.company")}
             list={companyList}
             setIsMenuOpen={setIsMenuOpen}
           />
           <MenuListItem
+            open={
+              technologyList.findLastIndex(
+                (item) => item.href === currentPathname
+              ) !== -1
+            }
             title={t("nav.titles.technology")}
             list={technologyList}
             setIsMenuOpen={setIsMenuOpen}
           />
           <MenuListItem
+            open={
+              productList.findLastIndex(
+                (item) => item.href === currentPathname
+              ) !== -1
+            }
             title={t("nav.titles.product")}
             list={productList}
             setIsMenuOpen={setIsMenuOpen}
           />
           <MenuListItem
+            open={
+              ir_prList.findLastIndex(
+                (item) => item.href === currentPathname
+              ) !== -1
+            }
             title={t("nav.titles.ir_pr")}
             list={ir_prList}
             setIsMenuOpen={setIsMenuOpen}

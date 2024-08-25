@@ -223,6 +223,30 @@ export default {
         },
       },
     },
+    sm101: {
+      subtitle: "세상을 이롭게 할, Stem Medix의 주요 기술",
+      related_materials: "SM-101(SR-1) 관련 자료",
+      verified: "검증됨",
+      titles: {
+        1: "1) SM-101 처리 그룹에서 보다 많은 수의 줄기세포 확보 가능​",
+        2: "2) SM-101 처리 그룹에서 노화 억제 효능을 검증​",
+        3: "3) SM-101 처리를 통한 혈관 신생 촉진 검증",
+        4: "4) SR-1 functional ability: migration 증가",
+        5: "5) SM-102(SR-1 NP) 그룹에서 혈관신생 / 골재생의 효능 검증",
+      },
+      verification_of_increased_mobility:
+        "SR-1을 처리한 EPC에서 기존의 저명한 SDF-1alpha 보다 이동능 증가 검증​",
+      history: {
+        title: "역사",
+        contents: {
+          title: "내용",
+          0: "2010년 노바티스와 스크립트 연구소에 의하여 StemRegenin-1 약물에 대한 연구개발 결과가 Science에 보고됨​",
+          1: "이후 2013~2016년 유의미한 결과들을 바탕으로 임상결과를 보고. 이후 결과가 없어 해당 내용 상세 검색결과",
+          2: "이후 노바티스에서 Megenta Therapeutics에 License-out을 통하여 MGTA-456 이름으로 연구를 지속함​",
+        },
+        related_materials: "관련 자료",
+      },
+    },
   },
   shortcut: "바로가기",
   shortcuts: {

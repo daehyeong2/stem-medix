@@ -45,7 +45,7 @@ const BreadCrumbItem = ({
   const pathnameFull = usePathname();
   const pathname = pathnameFull.slice(3);
   return (
-    <li className="relative flex cursor-pointer w-[50%] lg:w-52">
+    <li className="relative flex cursor-pointer w-[50%] lg:w-52 select-none">
       <span
         onClick={onClick}
         className={cn(

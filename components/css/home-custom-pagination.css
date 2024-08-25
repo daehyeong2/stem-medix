@@ -15,6 +15,7 @@
   background-color: rgba(0, 0, 0, 0.15);
   border: 1px solid transparent;
   transition: border 0.2s ease-in-out, background-color 0.2s ease-in-out;
+  cursor: pointer;
 }
 
 .swiper-custom-bullet.swiper-custom-bullet-active {

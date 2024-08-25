@@ -1,0 +1,23 @@
+#history_containerForBullets {
+  position: absolute;
+  bottom: 20px;
+  z-index: 10;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+}
+
+.history_swiper-custom-bullet {
+  display: block;
+  height: 6px;
+  width: 40px;
+  background-color: rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  border-radius: 9999px;
+}
+
+.history_swiper-custom-bullet.history_swiper-custom-bullet-active {
+  background-color: white;
+}
